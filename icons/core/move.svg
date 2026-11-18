@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="move,drag,pan,arrows,reposition,ย้าย,ลาก,เลื่อน">
+  <path d="M12 2.5v19" />
+  <path d="M2.5 12h19" />
+  <path d="m9 5.5 3-3 3 3" />
+  <path d="m9 18.5 3 3 3-3" />
+  <path d="m5.5 9-3 3 3 3" />
+  <path d="m18.5 9 3 3-3 3" />
+</svg>

@@ -1,11 +1,12 @@
 {
-  "$comment": "The thira-icons icon list, drawn in batches (1–4 = 0.1.0, 5 = 0.2.0). Names follow Lucide's canonical names where the concept is the same, so switching from Lucide is easy. `used` = projects that need it today. Status is computed: run `npm run progress`.",
+  "$comment": "The thira-icons icon list, drawn in batches (1–4 = 0.1.0, 5–6 = 0.2.0). Names follow Lucide's canonical names where the concept is the same, so switching from Lucide is easy. `used` = projects that need it today. Status is computed: run `npm run progress`.",
   "batches": {
     "1": "Used in thira-ui / apps today, plus the core UI basics",
     "2": "Status, account, files, communication",
     "3": "Time, data, devices, commerce",
     "4": "Everything else, and the extended Thai set",
-    "5": "0.2.0: common gaps (editing, files and people modifiers, media and objects)"
+    "5": "0.2.0: common gaps (editing, files and people modifiers, media and objects)",
+    "6": "0.2.0: more actions, modifiers, weather and everyday objects"
   },
   "groups": [
     {
@@ -115,6 +116,30 @@
         {
           "name": "chevrons-right",
           "batch": 5
+        },
+        {
+          "name": "chevrons-up",
+          "batch": 6
+        },
+        {
+          "name": "chevrons-down",
+          "batch": 6
+        },
+        {
+          "name": "rotate-cw",
+          "batch": 6
+        },
+        {
+          "name": "repeat",
+          "batch": 6
+        },
+        {
+          "name": "shuffle",
+          "batch": 6
+        },
+        {
+          "name": "move",
+          "batch": 6
         }
       ]
     },
@@ -235,6 +260,26 @@
         {
           "name": "list-filter",
           "batch": 5
+        },
+        {
+          "name": "scissors",
+          "batch": 6
+        },
+        {
+          "name": "zoom-in",
+          "batch": 6
+        },
+        {
+          "name": "zoom-out",
+          "batch": 6
+        },
+        {
+          "name": "power",
+          "batch": 6
+        },
+        {
+          "name": "cloud-upload",
+          "batch": 6
         }
       ]
     },
@@ -304,6 +349,14 @@
         {
           "name": "shield-check",
           "batch": 2
+        },
+        {
+          "name": "bell-plus",
+          "batch": 6
+        },
+        {
+          "name": "shield",
+          "batch": 6
         }
       ]
     },
@@ -341,6 +394,10 @@
         {
           "name": "user-minus",
           "batch": 5
+        },
+        {
+          "name": "user-x",
+          "batch": 6
         }
       ]
     },
@@ -410,6 +467,22 @@
         {
           "name": "bookmark-check",
           "batch": 5
+        },
+        {
+          "name": "file-x",
+          "batch": 6
+        },
+        {
+          "name": "file-minus",
+          "batch": 6
+        },
+        {
+          "name": "folder-minus",
+          "batch": 6
+        },
+        {
+          "name": "book",
+          "batch": 6
         }
       ]
     },
@@ -467,6 +540,14 @@
         {
           "name": "compass",
           "batch": 5
+        },
+        {
+          "name": "mail-plus",
+          "batch": 6
+        },
+        {
+          "name": "building",
+          "batch": 6
         }
       ]
     },
@@ -540,6 +621,14 @@
         {
           "name": "server",
           "batch": 3
+        },
+        {
+          "name": "calendar-plus",
+          "batch": 6
+        },
+        {
+          "name": "calendar-x",
+          "batch": 6
         }
       ]
     },
@@ -767,6 +856,38 @@
         {
           "name": "car",
           "batch": 5
+        },
+        {
+          "name": "briefcase",
+          "batch": 6
+        },
+        {
+          "name": "graduation-cap",
+          "batch": 6
+        },
+        {
+          "name": "trophy",
+          "batch": 6
+        },
+        {
+          "name": "music",
+          "batch": 6
+        },
+        {
+          "name": "umbrella",
+          "batch": 6
+        },
+        {
+          "name": "cloud-rain",
+          "batch": 6
+        },
+        {
+          "name": "cloud-sun",
+          "batch": 6
+        },
+        {
+          "name": "coffee",
+          "batch": 6
         }
       ]
     },

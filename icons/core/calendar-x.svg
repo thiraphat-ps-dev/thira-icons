@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="calendar x,cancel event,cancelled,remove appointment,ยกเลิกนัด,ยกเลิกกิจกรรม,ลบนัดหมาย">
+  <rect x="3.5" y="5" width="17" height="15.5" rx="4" data-duotone />
+  <path d="M8 3v4" />
+  <path d="M16 3v4" />
+  <path d="M3.5 10.5h17" />
+  <path d="m10 13.5 4 4" />
+  <path d="m14 13.5-4 4" />
+</svg>
