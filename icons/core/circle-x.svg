@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="error,fail,close,cancel,wrong,ผิดพลาด,ล้มเหลว,ยกเลิก">
+  <circle cx="12" cy="12" r="10" data-duotone />
+  <path d="m9 9 6 6" />
+  <path d="m15 9-6 6" />
+</svg>

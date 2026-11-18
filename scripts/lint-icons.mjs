@@ -66,7 +66,14 @@ export function lint(icons = loadSources()) {
     if (icon.tags.length < 3) report('error', `needs at least 3 data-tags (has ${icon.tags.length})`);
     for (const tag of icon.otherTags) report('error', `<${tag}> isn't allowed: flat, self-closing elements only`);
     if (icon.elements.length === 0) report('error', 'no elements');
-    if (!icon.elements.some((e) => e.attrs['data-duotone'])) report('warning', 'no element is marked data-duotone');
+    // Only icons with an area need a duotone mark; pure line icons (arrows, check) have none.
+    const closed = icon.elements.some(
+      (e) =>
+        (e.tag === 'circle' && num(e.attrs.r) > 1.5) || // r ≤ 1.5 circles are dots, not areas
+        ['rect', 'ellipse', 'polygon'].includes(e.tag) ||
+        (e.tag === 'path' && /z\s*$/i.test(String(e.attrs.d))),
+    );
+    if (closed && !icon.elements.some((e) => e.attrs['data-duotone'])) report('warning', 'no element is marked data-duotone');
 
     const box = [Infinity, Infinity, -Infinity, -Infinity];
     for (const el of icon.elements) {

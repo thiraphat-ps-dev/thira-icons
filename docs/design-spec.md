@@ -35,7 +35,7 @@ Open shapes (search, user) are balanced by eye: their visual mass should match a
 | Width | 1.75, uniform. No per-element `stroke-width` **(lint)** |
 | Caps and joins | Round (set on the root by the build) |
 | Colour | `currentColor` only; no `stroke`/`fill` colours in sources **(lint)** |
-| Dots | A zero-length line: `<path d="M8 15h.01" />` — the round cap draws the dot |
+| Dots | Detail dots (calendar days, the dot of `i` and `!`): a zero-length line, `<path d="M8 15h.01" />` — the round cap draws a 1.75 dot. Dots that *are* the icon (ellipsis): `<circle r="1" />`, a 3.75 dot |
 
 The default can change at use time (`strokeWidth`, sprite CSS variable), so icons must still read at 1.5 and 2.
 
@@ -68,7 +68,7 @@ Variants of an icon (`calendar-check`, `user-plus`, `file-x`) put the modifier i
 
 A `variant="duotone"` (soft 20% fill behind the main shape) may be added later without redrawing. So:
 
-- The main area of each icon should be a **closed** shape (or an open arc that closes sensibly, like the user's shoulders).
+- The main area of each icon should be a **closed** shape (or an open arc that closes sensibly, like the user's shoulders). Pure line icons (arrows, chevrons, check, x) have no area and no mark.
 - Mark the element(s) that would be filled with `data-duotone` **(lint: the attribute takes no value)**. The build strips `data-*` attributes from all outputs today.
 
 ## 8. Elements
