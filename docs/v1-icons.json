@@ -1,5 +1,5 @@
 {
-  "$comment": "The thira-icons icon list, drawn in batches (1–4 = 0.1.0, 5–7 = 0.2.0). Names follow Lucide's canonical names where the concept is the same, so switching from Lucide is easy. `used` = projects that need it today. Status is computed: run `npm run progress`.",
+  "$comment": "The thira-icons icon list, drawn in batches (1–4 = 0.1.0, 5–12 = 0.2.0). Names follow Lucide's canonical names where the concept is the same, so switching from Lucide is easy. `used` = projects that need it today. Status is computed: run `npm run progress`.",
   "batches": {
     "1": "Used in thira-ui / apps today, plus the core UI basics",
     "2": "Status, account, files, communication",
@@ -7,7 +7,12 @@
     "4": "Everything else, and the extended Thai set",
     "5": "0.2.0: common gaps (editing, files and people modifiers, media and objects)",
     "6": "0.2.0: more actions, modifiers, weather and everyday objects",
-    "7": "0.2.0: text editing, travel and outdoors, more misc"
+    "7": "0.2.0: text editing, travel and outdoors, more misc",
+    "8": "0.2.0: layout and controls, communication and reactions, developer and system",
+    "9": "0.2.0: home and everyday, nature and weather, money and business",
+    "10": "0.2.0: more arrows, media playback, health and misc",
+    "11": "0.2.0: basic shapes, security and time, more files and cloud",
+    "12": "0.2.0: food and drink, tools and creative, mail and messaging"
   },
   "groups": [
     {
@@ -141,6 +146,46 @@
         {
           "name": "move",
           "batch": 6
+        },
+        {
+          "name": "arrow-down-left",
+          "batch": 10
+        },
+        {
+          "name": "arrow-down-right",
+          "batch": 10
+        },
+        {
+          "name": "arrow-up-left",
+          "batch": 10
+        },
+        {
+          "name": "arrow-left-right",
+          "batch": 10
+        },
+        {
+          "name": "corner-up-left",
+          "batch": 10
+        },
+        {
+          "name": "corner-up-right",
+          "batch": 10
+        },
+        {
+          "name": "chevron-first",
+          "batch": 10
+        },
+        {
+          "name": "chevron-last",
+          "batch": 10
+        },
+        {
+          "name": "undo",
+          "batch": 10
+        },
+        {
+          "name": "redo",
+          "batch": 10
         }
       ]
     },
@@ -358,6 +403,46 @@
         {
           "name": "shield",
           "batch": 6
+        },
+        {
+          "name": "lock-keyhole",
+          "batch": 11
+        },
+        {
+          "name": "shield-x",
+          "batch": 11
+        },
+        {
+          "name": "shield-plus",
+          "batch": 11
+        },
+        {
+          "name": "scan",
+          "batch": 11
+        },
+        {
+          "name": "scan-line",
+          "batch": 11
+        },
+        {
+          "name": "scan-face",
+          "batch": 11
+        },
+        {
+          "name": "siren",
+          "batch": 11
+        },
+        {
+          "name": "alarm-clock",
+          "batch": 11
+        },
+        {
+          "name": "hourglass",
+          "batch": 11
+        },
+        {
+          "name": "bell-dot",
+          "batch": 11
         }
       ]
     },
@@ -484,6 +569,46 @@
         {
           "name": "book",
           "batch": 6
+        },
+        {
+          "name": "folder-check",
+          "batch": 11
+        },
+        {
+          "name": "folder-x",
+          "batch": 11
+        },
+        {
+          "name": "file-image",
+          "batch": 11
+        },
+        {
+          "name": "file-down",
+          "batch": 11
+        },
+        {
+          "name": "file-up",
+          "batch": 11
+        },
+        {
+          "name": "files",
+          "batch": 11
+        },
+        {
+          "name": "cloud-download",
+          "batch": 11
+        },
+        {
+          "name": "cloud-off",
+          "batch": 11
+        },
+        {
+          "name": "link-2",
+          "batch": 11
+        },
+        {
+          "name": "hard-drive-download",
+          "batch": 11
         }
       ]
     },
@@ -549,6 +674,86 @@
         {
           "name": "building",
           "batch": 6
+        },
+        {
+          "name": "phone-call",
+          "batch": 8
+        },
+        {
+          "name": "phone-off",
+          "batch": 8
+        },
+        {
+          "name": "video-off",
+          "batch": 8
+        },
+        {
+          "name": "megaphone",
+          "batch": 8
+        },
+        {
+          "name": "rss",
+          "batch": 8
+        },
+        {
+          "name": "smile",
+          "batch": 8
+        },
+        {
+          "name": "frown",
+          "batch": 8
+        },
+        {
+          "name": "thumbs-down",
+          "batch": 8
+        },
+        {
+          "name": "hand",
+          "batch": 8
+        },
+        {
+          "name": "messages-square",
+          "batch": 8
+        },
+        {
+          "name": "reply",
+          "batch": 12
+        },
+        {
+          "name": "reply-all",
+          "batch": 12
+        },
+        {
+          "name": "forward",
+          "batch": 12
+        },
+        {
+          "name": "send-horizontal",
+          "batch": 12
+        },
+        {
+          "name": "mail-x",
+          "batch": 12
+        },
+        {
+          "name": "mail-check",
+          "batch": 12
+        },
+        {
+          "name": "message-circle-more",
+          "batch": 12
+        },
+        {
+          "name": "message-square-text",
+          "batch": 12
+        },
+        {
+          "name": "contact",
+          "batch": 12
+        },
+        {
+          "name": "phone-incoming",
+          "batch": 12
         }
       ]
     },
@@ -743,6 +948,46 @@
         {
           "name": "printer",
           "batch": 5
+        },
+        {
+          "name": "skip-back",
+          "batch": 10
+        },
+        {
+          "name": "skip-forward",
+          "batch": 10
+        },
+        {
+          "name": "rewind",
+          "batch": 10
+        },
+        {
+          "name": "fast-forward",
+          "batch": 10
+        },
+        {
+          "name": "circle-play",
+          "batch": 10
+        },
+        {
+          "name": "circle-pause",
+          "batch": 10
+        },
+        {
+          "name": "circle-stop",
+          "batch": 10
+        },
+        {
+          "name": "volume-1",
+          "batch": 10
+        },
+        {
+          "name": "volume",
+          "batch": 10
+        },
+        {
+          "name": "radio",
+          "batch": 10
         }
       ]
     },
@@ -929,6 +1174,46 @@
         {
           "name": "battery",
           "batch": 7
+        },
+        {
+          "name": "heart-pulse",
+          "batch": 10
+        },
+        {
+          "name": "stethoscope",
+          "batch": 10
+        },
+        {
+          "name": "user-cog",
+          "batch": 10
+        },
+        {
+          "name": "accessibility",
+          "batch": 10
+        },
+        {
+          "name": "baby",
+          "batch": 10
+        },
+        {
+          "name": "paw-print",
+          "batch": 10
+        },
+        {
+          "name": "share",
+          "batch": 10
+        },
+        {
+          "name": "unlink",
+          "batch": 10
+        },
+        {
+          "name": "sun-moon",
+          "batch": 10
+        },
+        {
+          "name": "gamepad-2",
+          "batch": 10
         }
       ]
     },
@@ -1019,6 +1304,366 @@
         {
           "name": "anchor",
           "batch": 7
+        }
+      ]
+    },
+    {
+      "title": "Layout & controls",
+      "icons": [
+        {
+          "name": "panel-left",
+          "batch": 8
+        },
+        {
+          "name": "panel-right",
+          "batch": 8
+        },
+        {
+          "name": "table",
+          "batch": 8
+        },
+        {
+          "name": "kanban",
+          "batch": 8
+        },
+        {
+          "name": "square-check",
+          "batch": 8
+        },
+        {
+          "name": "toggle-left",
+          "batch": 8
+        },
+        {
+          "name": "toggle-right",
+          "batch": 8
+        },
+        {
+          "name": "circle-dot",
+          "batch": 8
+        },
+        {
+          "name": "maximize",
+          "batch": 8
+        },
+        {
+          "name": "minimize",
+          "batch": 8
+        }
+      ]
+    },
+    {
+      "title": "Developer & system",
+      "icons": [
+        {
+          "name": "cpu",
+          "batch": 8
+        },
+        {
+          "name": "hard-drive",
+          "batch": 8
+        },
+        {
+          "name": "git-merge",
+          "batch": 8
+        },
+        {
+          "name": "git-pull-request",
+          "batch": 8
+        },
+        {
+          "name": "git-commit-horizontal",
+          "batch": 8
+        },
+        {
+          "name": "file-code",
+          "batch": 8
+        },
+        {
+          "name": "key",
+          "batch": 8
+        },
+        {
+          "name": "fingerprint",
+          "batch": 8
+        },
+        {
+          "name": "qr-code",
+          "batch": 8
+        },
+        {
+          "name": "plug",
+          "batch": 8
+        }
+      ]
+    },
+    {
+      "title": "Home & everyday",
+      "icons": [
+        {
+          "name": "bed",
+          "batch": 9
+        },
+        {
+          "name": "sofa",
+          "batch": 9
+        },
+        {
+          "name": "lamp",
+          "batch": 9
+        },
+        {
+          "name": "utensils",
+          "batch": 9
+        },
+        {
+          "name": "shirt",
+          "batch": 9
+        },
+        {
+          "name": "glasses",
+          "batch": 9
+        },
+        {
+          "name": "watch",
+          "batch": 9
+        },
+        {
+          "name": "cake",
+          "batch": 9
+        },
+        {
+          "name": "pill",
+          "batch": 9
+        },
+        {
+          "name": "dumbbell",
+          "batch": 9
+        }
+      ]
+    },
+    {
+      "title": "Nature & weather",
+      "icons": [
+        {
+          "name": "leaf",
+          "batch": 9
+        },
+        {
+          "name": "tree-pine",
+          "batch": 9
+        },
+        {
+          "name": "flower",
+          "batch": 9
+        },
+        {
+          "name": "snowflake",
+          "batch": 9
+        },
+        {
+          "name": "droplet",
+          "batch": 9
+        },
+        {
+          "name": "thermometer",
+          "batch": 9
+        },
+        {
+          "name": "wind",
+          "batch": 9
+        },
+        {
+          "name": "cloud-lightning",
+          "batch": 9
+        },
+        {
+          "name": "sunrise",
+          "batch": 9
+        },
+        {
+          "name": "moon-star",
+          "batch": 9
+        }
+      ]
+    },
+    {
+      "title": "Money & business",
+      "icons": [
+        {
+          "name": "banknote",
+          "batch": 9
+        },
+        {
+          "name": "coins",
+          "batch": 9
+        },
+        {
+          "name": "piggy-bank",
+          "batch": 9
+        },
+        {
+          "name": "landmark",
+          "batch": 9
+        },
+        {
+          "name": "presentation",
+          "batch": 9
+        },
+        {
+          "name": "file-spreadsheet",
+          "batch": 9
+        },
+        {
+          "name": "clipboard-list",
+          "batch": 9
+        },
+        {
+          "name": "id-card",
+          "batch": 9
+        },
+        {
+          "name": "badge-check",
+          "batch": 9
+        },
+        {
+          "name": "scale",
+          "batch": 9
+        }
+      ]
+    },
+    {
+      "title": "Shapes",
+      "icons": [
+        {
+          "name": "circle",
+          "batch": 11
+        },
+        {
+          "name": "square",
+          "batch": 11
+        },
+        {
+          "name": "triangle",
+          "batch": 11
+        },
+        {
+          "name": "diamond",
+          "batch": 11
+        },
+        {
+          "name": "hexagon",
+          "batch": 11
+        },
+        {
+          "name": "pentagon",
+          "batch": 11
+        },
+        {
+          "name": "octagon",
+          "batch": 11
+        },
+        {
+          "name": "shapes",
+          "batch": 11
+        },
+        {
+          "name": "sparkle",
+          "batch": 11
+        },
+        {
+          "name": "asterisk",
+          "batch": 11
+        }
+      ]
+    },
+    {
+      "title": "Food & drink",
+      "icons": [
+        {
+          "name": "pizza",
+          "batch": 12
+        },
+        {
+          "name": "apple",
+          "batch": 12
+        },
+        {
+          "name": "carrot",
+          "batch": 12
+        },
+        {
+          "name": "cup-soda",
+          "batch": 12
+        },
+        {
+          "name": "wine",
+          "batch": 12
+        },
+        {
+          "name": "beer",
+          "batch": 12
+        },
+        {
+          "name": "ice-cream-cone",
+          "batch": 12
+        },
+        {
+          "name": "sandwich",
+          "batch": 12
+        },
+        {
+          "name": "soup",
+          "batch": 12
+        },
+        {
+          "name": "egg",
+          "batch": 12
+        }
+      ]
+    },
+    {
+      "title": "Tools & creative",
+      "icons": [
+        {
+          "name": "wrench",
+          "batch": 12
+        },
+        {
+          "name": "hammer",
+          "batch": 12
+        },
+        {
+          "name": "paintbrush",
+          "batch": 12
+        },
+        {
+          "name": "palette",
+          "batch": 12
+        },
+        {
+          "name": "pen-tool",
+          "batch": 12
+        },
+        {
+          "name": "ruler",
+          "batch": 12
+        },
+        {
+          "name": "pipette",
+          "batch": 12
+        },
+        {
+          "name": "eraser",
+          "batch": 12
+        },
+        {
+          "name": "highlighter",
+          "batch": 12
+        },
+        {
+          "name": "magnet",
+          "batch": 12
         }
       ]
     },

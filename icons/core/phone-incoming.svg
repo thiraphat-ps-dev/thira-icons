@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="phone incoming,incoming call,receive call,answer call,สายเรียกเข้า,รับสาย,โทรเข้า">
+  <path d="M8.6 3.5H6A2.5 2.5 0 0 0 3.5 6c0 8 6.5 14.5 14.5 14.5a2.5 2.5 0 0 0 2.5-2.5v-2.6a1 1 0 0 0-.7-.95l-3.4-1.1a1 1 0 0 0-1 .25l-1.6 1.6a12 12 0 0 1-5.5-5.5l1.6-1.6a1 1 0 0 0 .25-1L9.55 4.2a1 1 0 0 0-.95-.7z" data-duotone />
+  <path d="M21 3 14.5 9.5" />
+  <path d="M19 9.5H14.5V5" />
+</svg>

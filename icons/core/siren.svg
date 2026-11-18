@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="siren,alarm,emergency,police,warning light,beacon,ไซเรน,ฉุกเฉิน,สัญญาณเตือน,ไฟฉุกเฉิน">
+  <path d="M7 17v-2a5 5 0 0 1 10 0v2z" data-duotone />
+  <rect x="4" y="17" width="16" height="4" rx="1.5" />
+  <path d="M12 6.25L12 3.75" />
+  <path d="M5.3 9.38L3.38 7.77" />
+  <path d="M18.7 9.38L20.62 7.77" />
+</svg>

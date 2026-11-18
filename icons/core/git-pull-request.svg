@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="git,pull request,pr,merge request,review,version control,พูลรีเควสต์,รีวิว,เวอร์ชัน,สาขา">
+  <circle cx="6" cy="5.5" r="2.5" data-duotone />
+  <circle cx="6" cy="18.5" r="2.5" data-duotone />
+  <circle cx="18" cy="18.5" r="2.5" data-duotone />
+  <path d="M6 8v8" />
+  <path d="M18 16V10a3 3 0 0 0-3-3h-2.5" />
+  <path d="M15 4.5L12.5 7L15 9.5" />
+</svg>

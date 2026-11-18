@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="beer,mug,pint,drink,alcohol,pub,bar,เบียร์,แก้วเบียร์,เครื่องดื่ม,ผับ">
+  <rect x="4.5" y="4.5" width="11" height="16.5" rx="3" data-duotone />
+  <path d="M4.5 9.5c1.83 0 1.83 1.5 3.67 1.5s1.83-1.5 3.67-1.5 1.83 1.5 3.66 1.5" />
+  <path d="M15.5 11.5h2a2.5 2.5 0 0 1 2.5 2.5v1.5a2.5 2.5 0 0 1-2.5 2.5h-2" />
+  <path d="M8.5 14.5v3" />
+  <path d="M11.5 14.5v3" />
+</svg>

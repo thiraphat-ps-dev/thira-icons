@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="alarm clock,alarm,wake up,reminder,time,morning,นาฬิกาปลุก,ปลุก,ตั้งปลุก,เวลา">
+  <circle cx="12" cy="13.5" r="6.75" data-duotone />
+  <path d="M12 10.5v3.25l2.25 1.5" />
+  <path d="M2.48 9.06A10.5 10.5 0 0 1 7.56 3.98" />
+  <path d="M16.44 3.98A10.5 10.5 0 0 1 21.52 9.06" />
+  <path d="M16.77 18.27L18.89 20.39" />
+  <path d="M7.23 18.27L5.11 20.39" />
+</svg>

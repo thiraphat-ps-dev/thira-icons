@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="contact,address book,contacts,directory,person card,รายชื่อ,สมุดโทรศัพท์,ผู้ติดต่อ">
+  <rect x="3.5" y="2.5" width="14" height="19" rx="3" data-duotone />
+  <circle cx="10.5" cy="8.5" r="2" />
+  <path d="M7 17a3.5 3.5 0 0 1 7 0" />
+  <path d="M17.5 7h3" />
+  <path d="M17.5 12h3" />
+  <path d="M17.5 17h3" />
+</svg>

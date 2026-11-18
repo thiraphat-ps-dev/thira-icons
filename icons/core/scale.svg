@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="scale,balance,justice,law,compare,weigh,fair,ตาชั่ง,ความยุติธรรม,กฎหมาย,เปรียบเทียบ">
+  <path d="M12 4.5V20.5" />
+  <path d="M8 20.5h8" />
+  <path d="M5.5 7h13" />
+  <path d="M2.5 13.5L5.5 7L8.5 13.5" />
+  <path d="M15.5 13.5L18.5 7L21.5 13.5" />
+  <path d="M2.5 13.5h6a3 3 0 0 1-6 0Z" data-duotone />
+  <path d="M15.5 13.5h6a3 3 0 0 1-6 0Z" data-duotone />
+</svg>

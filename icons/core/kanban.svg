@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="kanban,board,columns,cards,tasks,workflow,คัมบัง,บอร์ด,งาน,คอลัมน์">
+  <rect x="3" y="3" width="18" height="18" rx="4" data-duotone />
+  <path d="M8 7v10" />
+  <path d="M12 7v7" />
+  <path d="M16 7v4" />
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="watch,wristwatch,time,smartwatch,wearable,accessory,นาฬิกาข้อมือ,นาฬิกา,สมาร์ทวอทช์,เวลา">
+  <rect x="6" y="6.5" width="12" height="11" rx="3" data-duotone />
+  <path d="M9 6.5v-3h6v3" />
+  <path d="M9 17.5v3h6v-3" />
+  <path d="M12 9.75V12l2 1.5" />
+</svg>

@@ -68,6 +68,8 @@ Exception: when the modifier describes the *content* of a container and fits ins
 
 Also put the modifier inside when the base is too narrow to survive the cut (`bookmark-check`): cutting a 12-wide bookmark for the badge leaves half a shape that no longer reads as a bookmark.
 
+"Off" variants (`eye-off`, `bell-off`, `mic-off`) cross the base with a slash from (3.5, 3.5) to (20.5, 20.5) and cut the base 2.75 back from it. If the base itself lies along that diagonal (`phone-off`), use the opposite diagonal so the base survives the cut.
+
 ## 7. Duotone-ready
 
 A `variant="duotone"` (soft 20% fill behind the main shape) may be added later without redrawing. So:

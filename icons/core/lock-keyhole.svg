@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="lock keyhole,secure,private,password,vault,ล็อก,รูกุญแจ,ปลอดภัย,รหัสผ่าน">
+  <rect x="4" y="10.5" width="16" height="10.5" rx="3" data-duotone />
+  <path d="M7.5 10.5V7.5a4.5 4.5 0 0 1 9 0v3" />
+  <circle cx="12" cy="14.75" r="1" />
+  <path d="M12 16.5v1.5" />
+</svg>

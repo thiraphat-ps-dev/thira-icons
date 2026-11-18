@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="bell dot,new notification,unread,notification badge,alert,แจ้งเตือนใหม่,ยังไม่อ่าน,จุดแจ้งเตือน">
+  <path d="M18.03 10.5C18.2 13.39 19.15 15.15 20.5 16.5H3.5C5 15 6 13 6 9.5C6 6.19 8.69 3.5 12 3.5C12.72 3.5 13.4 3.63 14.04 3.86" data-duotone />
+  <path d="M10 19a2 2 0 0 0 4 0" />
+  <circle cx="18" cy="6" r="1.5" />
+</svg>

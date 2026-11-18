@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="utensils,fork,spoon,cutlery,food,restaurant,eat,meal,ช้อนส้อม,อาหาร,ร้านอาหาร,กิน">
+  <path d="M5.5 3v4.5a2.5 2.5 0 0 0 5 0V3" />
+  <path d="M8 10v11.5" />
+  <ellipse cx="17" cy="7.25" rx="2.75" ry="4.25" data-duotone />
+  <path d="M17 11.5v10" />
+</svg>

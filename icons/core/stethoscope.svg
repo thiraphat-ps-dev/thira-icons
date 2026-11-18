@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="stethoscope,doctor,medical,health,checkup,clinic,หูฟังแพทย์,หมอ,ตรวจสุขภาพ">
+  <path d="M4.5 3v5a4 4 0 0 0 8 0V3" />
+  <path d="M8.5 12v3a5 5 0 0 0 10 0v-.75" />
+  <circle cx="18.5" cy="12" r="2.25" data-duotone />
+</svg>

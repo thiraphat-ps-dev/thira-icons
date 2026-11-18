@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="banknote,cash,money,bill,note,payment,ธนบัตร,เงินสด,เงิน,แบงก์">
+  <rect x="2" y="5.5" width="20" height="13" rx="3" data-duotone />
+  <circle cx="12" cy="12" r="2.5" />
+  <path d="M6 12h.01" />
+  <path d="M18 12h.01" />
+</svg>
