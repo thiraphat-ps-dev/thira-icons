@@ -7,10 +7,27 @@ import * as Icons from '../dist/react/index.js';
 import { BahtIcon, SearchIcon, TempleIcon } from '../dist/react/index.js';
 import TrashDefault from '../dist/react/icons/trash.js';
 
-type Meta = { name: string; component: string; codepoint: string; tags: string[]; source: 'lucide' | 'thai' };
+import { lint } from '../scripts/lint-icons.mjs';
+
+type Meta = { name: string; component: string; codepoint: string; tags: string[]; source: 'core' | 'thai' | 'lucide' };
 const meta: Meta[] = JSON.parse(readFileSync('dist/icons.json', 'utf8'));
 
+describe('design spec (docs/design-spec.md)', () => {
+  it('has no lint errors in icons/core and icons/thai', () => {
+    const errors = lint().filter((p) => p.level === 'error');
+    expect(errors.map((e) => `${e.file}  ${e.message}`)).toEqual([]);
+  });
+});
+
 describe('build output', () => {
+  it('uses the own drawing when a name exists in both core and Lucide', () => {
+    const search = meta.find((m) => m.name === 'search');
+    expect(search?.source).toBe('core');
+    const svg = readFileSync('dist/svg/search.svg', 'utf8');
+    expect(svg).toContain('r="6.5"'); // ours; Lucide's search circle is r="8"
+    expect(svg).not.toContain('data-'); // source-only attributes are stripped
+  });
+
   it('has one SVG file, one sprite symbol and one React export per icon', () => {
     const svgs = readdirSync('dist/svg');
     const sprite = readFileSync('dist/sprite.svg', 'utf8');

@@ -1,6 +1,8 @@
 # thira-icons
 
-Friendly, rounded stroke icons for React and plain HTML: **2,091 icons restyled from [Lucide](https://lucide.dev)**, plus a **Thai set** (฿ baht, Thai ID card, temple, tuk-tuk, lotus…). Made to sit with [thira-ui](https://github.com/thiraphat-ps-dev/thira-ui) and [Thira Sans](https://github.com/thiraphat-ps-dev/thira-sans).
+Friendly, rounded stroke icons for React and plain HTML, with a **Thai set** (฿ baht, Thai ID card, temple, tuk-tuk, lotus…). Made to sit with [thira-ui](https://github.com/thiraphat-ps-dev/thira-ui) and [Thira Sans](https://github.com/thiraphat-ps-dev/thira-sans).
+
+**Work in progress:** thira-icons is being drawn from scratch to its own [design spec](docs/design-spec.md) ("Soft": 1.75 round strokes, generous corners, full proportions). Until the core set is complete, names that haven't been drawn yet are filled in from [Lucide](https://lucide.dev), restyled — so every name works today, and each one switches to the new drawing as it lands.
 
 **Browse and search all icons (English or Thai):** https://thiraphat-ps-dev.github.io/thira-icons/
 
@@ -77,12 +79,20 @@ Classes are `ti ti-<name>`; glyphs are in the Private Use Area (codepoints in [i
 | `tuk-tuk`      | Auto rickshaw                                 | transport, ตุ๊กตุ๊ก           |
 | `lotus`        | Lotus flower                                  | buddhism, บัว                |
 
-Sources are in [icons/thai/](icons/thai/). Draw on the 24×24 grid, strokes only, round caps and joins, about 2px of padding; put search words (English and Thai) in `data-tags`. Avoid logos and trademarks.
+Sources are in [icons/thai/](icons/thai/).
+
+## Drawing icons
+
+Every icon is drawn to [docs/design-spec.md](docs/design-spec.md): 24 grid with 2 units of padding, keylines, 1.75 round strokes, a corner-radius table, 2-unit gaps, a bottom-right badge zone for modifiers, and English + Thai tags. `npm run lint:icons` checks the measurable rules (it also runs in `npm test`).
+
+- `icons/core/` — general UI icons. A file here replaces the Lucide icon of the same name (same component name and font codepoint), so apps don't change.
+- `icons/thai/` — the Thai set.
 
 ## How it's built
 
 ```sh
-npm run build        # Lucide + icons/thai → dist/ (svg, sprite, react, icons.json)
+npm run lint:icons   # check icons/core and icons/thai against the design spec
+npm run build        # own icons + Lucide fill-ins → dist/ (svg, sprite, react, icons.json)
 npm run build:font   # dist/svg → dist/font (needs Python: pip install -r requirements.txt)
 npm test
 npm run site         # preview site → site/
@@ -90,8 +100,11 @@ npm run site         # preview site → site/
 
 | Path                     | What it is                                                                                     |
 | ------------------------ | ---------------------------------------------------------------------------------------------- |
-| `scripts/style.mjs`      | The Thira style rules (stroke width, corner radius) applied to every icon                      |
-| `scripts/build.mjs`      | Reads Lucide's `icon-nodes.json` (pinned `lucide-static`) and `icons/thai/*.svg`, writes `dist/` |
+| `docs/design-spec.md`    | The drawing rules                                                                              |
+| `scripts/lint-icons.mjs` | Checks own icons against the spec (elements, attributes, radii, live area, tags, duotone mark) |
+| `scripts/style.mjs`      | Restyle rules for the Lucide fill-ins only (stroke width, corner radius)                       |
+| `scripts/build.mjs`      | Merges `icons/core`, `icons/thai` and Lucide's `icon-nodes.json` (pinned `lucide-static`), writes `dist/` |
+| `explore/styles.html`    | The three style directions that were compared; "A · Soft" was chosen                          |
 | `scripts/font.py`        | Expands strokes to outlines with picosvg and builds the font with fontTools                    |
 | `icons/codepoints.json`  | Icon font codepoints. Managed by the build; commit it whenever icons are added                 |
 | `src/create-icon.ts`     | The React runtime behind every icon component                                                  |

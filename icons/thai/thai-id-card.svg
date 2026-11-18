@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="identity,id,national id,citizen,card,บัตรประชาชน,บัตร">
-  <rect x="2" y="5" width="20" height="14" rx="2" />
+  <rect x="2" y="5" width="20" height="14" rx="3" data-duotone />
   <rect x="5" y="8.5" width="4" height="3.5" rx="1" />
   <path d="M5 15.5h5" />
   <circle cx="16.5" cy="10.5" r="1.75" />

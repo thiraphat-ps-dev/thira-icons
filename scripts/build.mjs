@@ -1,21 +1,22 @@
-// Builds every output from two sources:
-//   - Lucide (lucide-static, pinned in package.json): icon-nodes.json + tags.json
-//   - icons/thai/*.svg: thira-icons' own Thai set
-// Each icon goes through scripts/style.mjs, then out to dist/:
+// Builds every output from:
+//   - icons/core/*.svg and icons/thai/*.svg: thira-icons' own icons, drawn to docs/design-spec.md
+//   - Lucide (lucide-static, pinned in package.json) for every name not drawn yet, restyled with
+//     scripts/style.mjs. An own icon with the same name replaces Lucide's.
+// Outputs in dist/:
 //   svg/<name>.svg, sprite.svg, icons.json, react/icons/<name>.js(+.d.ts), react/index.js(+.d.ts)
 // The React runtime (src/create-icon.ts) is compiled separately by `tsc` into dist/react/.
-import { mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { join } from 'node:path';
+import { loadSources, outputAttrs } from './sources.mjs';
 import { STROKE_WIDTH, restyle } from './style.mjs';
 
 const require = createRequire(import.meta.url);
 const DIST = 'dist';
-const THAI_DIR = 'icons/thai';
 const ELEMENTS = new Set(['path', 'circle', 'rect', 'line', 'polyline', 'polygon', 'ellipse']);
 
 /** @typedef {[string, Record<string, string>][]} Node */
-/** @typedef {{ name: string, component: string, tags: string[], source: 'lucide' | 'thai', node: Node }} Icon */
+/** @typedef {{ name: string, component: string, tags: string[], source: 'core' | 'thai' | 'lucide', node: Node }} Icon */
 
 /** Lucide icons, keyed by name. */
 function loadLucide() {
@@ -26,24 +27,31 @@ function loadLucide() {
   return Object.keys(nodes).map((name) => ({ name, tags: tags[name] ?? [], source: 'lucide', node: nodes[name] }));
 }
 
-/** Parses the small, regular SVGs in icons/thai (one element per line, self-closing). */
-function loadThai() {
-  return readdirSync(THAI_DIR)
-    .filter((f) => f.endsWith('.svg'))
-    .map((file) => {
-      const name = file.slice(0, -4);
-      const text = readFileSync(join(THAI_DIR, file), 'utf8');
-      const tags = (/data-tags="([^"]*)"/.exec(text)?.[1] ?? '').split(',').filter(Boolean);
-      /** @type {Node} */
-      const node = [];
-      for (const [, tag, attrText] of text.matchAll(/<(\w+)\s+([^>]*?)\s*\/>/g)) {
-        if (!ELEMENTS.has(tag)) throw new Error(`${file}: unsupported element <${tag}>`);
-        const attrs = Object.fromEntries([...attrText.matchAll(/([\w-]+)="([^"]*)"/g)].map(([, k, v]) => [k, v]));
-        node.push([tag, attrs]);
-      }
-      if (node.length === 0) throw new Error(`${file}: no elements`);
-      return { name, tags, source: 'thai', node };
-    });
+/** Hand-drawn icons (icons/core, icons/thai), drawn to docs/design-spec.md — no restyling. */
+function loadOwn() {
+  return loadSources().map((icon) => {
+    for (const el of icon.elements) {
+      if (!ELEMENTS.has(el.tag)) throw new Error(`${icon.file}: unsupported element <${el.tag}>`);
+    }
+    if (icon.otherTags.length || icon.elements.length === 0) {
+      throw new Error(`${icon.file}: run \`node scripts/lint-icons.mjs\` for details`);
+    }
+    return {
+      name: icon.name,
+      tags: icon.tags,
+      source: icon.source,
+      node: icon.elements.map((el) => [el.tag, outputAttrs(el.attrs)]),
+    };
+  });
+}
+
+/** Own icons first; a Lucide icon with the same name is replaced, so it can be swapped gradually. */
+function merge(own, lucide) {
+  const ownNames = new Set(own.map((i) => i.name));
+  const restyled = lucide
+    .filter((i) => !ownNames.has(i.name))
+    .map((i) => ({ ...i, node: i.node.map(([tag, a]) => [tag, restyle(tag, a)]) }));
+  return { icons: [...own, ...restyled], replaced: lucide.length - restyled.length };
 }
 
 /** "arrow-up-right" → "ArrowUpRightIcon" */
@@ -106,12 +114,9 @@ const SVG_ATTRS = `xmlns="http://www.w3.org/2000/svg" width="24" height="24" vie
 
 function main() {
   /** @type {Icon[]} */
-  const icons = [...loadLucide(), ...loadThai()]
-    .map((icon) => ({
-      ...icon,
-      component: componentName(icon.name),
-      node: icon.node.map(([tag, a]) => [tag, restyle(tag, a)]),
-    }))
+  const merged = merge(loadOwn(), loadLucide());
+  const icons = merged.icons
+    .map((icon) => ({ ...icon, component: componentName(icon.name) }))
     .sort((a, b) => a.name.localeCompare(b.name));
   check(icons);
   assignCodepoints(icons);
@@ -176,8 +181,11 @@ function main() {
     ) + '\n',
   );
 
-  const thai = icons.filter((i) => i.source === 'thai').length;
-  console.log(`built ${icons.length} icons (${icons.length - thai} Lucide, ${thai} Thai)`);
+  const count = (s) => icons.filter((i) => i.source === s).length;
+  console.log(
+    `built ${icons.length} icons: ${count('core')} core + ${count('thai')} Thai (own), ` +
+      `${count('lucide')} Lucide (${merged.replaced} replaced by own)`,
+  );
 }
 
 main();

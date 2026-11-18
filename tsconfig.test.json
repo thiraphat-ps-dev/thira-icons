@@ -2,14 +2,24 @@
   // Typechecks the tests against the *generated* .d.ts in dist/, the way a consumer sees them.
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["ES2022", "DOM"],
+    "lib": [
+      "ES2022",
+      "DOM"
+    ],
     "module": "ESNext",
     "moduleResolution": "bundler",
     "jsx": "react-jsx",
     "strict": true,
     "skipLibCheck": true,
     "noEmit": true,
-    "types": ["node"]
+    "types": [
+      "node"
+    ],
+    "allowJs": true,
+    "checkJs": false
   },
-  "include": ["test", "vitest.config.ts"]
+  "include": [
+    "test",
+    "vitest.config.ts"
+  ]
 }

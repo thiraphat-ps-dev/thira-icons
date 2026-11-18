@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="wat,thai temple,religion,buddhism,landmark,วัด,โบสถ์">
   <path d="M12 2v3" />
-  <path d="M5 11 12 5l7 6" />
+  <path d="M5 11 12 5l7 6" data-duotone />
   <path d="M5 11 4 9.5" />
   <path d="M19 11l1-1.5" />
-  <path d="M2.5 15.5 12 10l9.5 5.5" />
+  <path d="M2.5 15.5 12 10l9.5 5.5" data-duotone />
   <path d="M2.5 15.5 1.5 14" />
   <path d="M21.5 15.5l1-1.5" />
   <path d="M6 14v7" />
