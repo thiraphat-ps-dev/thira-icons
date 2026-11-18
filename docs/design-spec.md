@@ -62,7 +62,9 @@ Paths with corners follow the same table: draw them with arcs (`a2 2 0 0 1 …`)
 
 ## 6. Modifiers
 
-Variants of an icon (`calendar-check`, `user-plus`, `file-x`) put the modifier in the **bottom-right badge zone**: a circle at (18, 18), r 4.5. The base icon is cut back so there are 2 units of clear space around the badge. Keep the base recognisable with the badge removed.
+Variants of an icon (`user-plus`, `file-x`) put the modifier in the **bottom-right badge zone**: a circle at (18, 18), r 4.5. The base icon is cut back so there are 2 units of clear space around the badge. Keep the base recognisable with the badge removed.
+
+Exception: when the modifier describes the *content* of a container and fits inside it (`calendar-check`), draw it inside the body instead of as a badge.
 
 ## 7. Duotone-ready
 
