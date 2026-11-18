@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="printer,print,paper,document,office,เครื่องพิมพ์,พิมพ์,เอกสาร">
+  <path d="M7 8V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v3" />
+  <rect x="2.5" y="8" width="19" height="9" rx="2" data-duotone />
+  <path d="M7 17v2a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-2" />
+  <path d="M17.5 12.5h.01" />
+</svg>

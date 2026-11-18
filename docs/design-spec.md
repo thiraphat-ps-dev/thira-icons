@@ -66,6 +66,8 @@ Variants of an icon (`user-plus`, `file-x`) put the modifier in the **bottom-rig
 
 Exception: when the modifier describes the *content* of a container and fits inside it (`calendar-check`), draw it inside the body instead of as a badge.
 
+Also put the modifier inside when the base is too narrow to survive the cut (`bookmark-check`): cutting a 12-wide bookmark for the badge leaves half a shape that no longer reads as a bookmark.
+
 ## 7. Duotone-ready
 
 A `variant="duotone"` (soft 20% fill behind the main shape) may be added later without redrawing. So:

@@ -1,10 +1,11 @@
 {
-  "$comment": "The icons for thira-icons 0.1.0, drawn in batches. Names follow Lucide's canonical names where the concept is the same, so switching from Lucide is easy. `used` = projects that need it today. Status is computed: run `npm run progress`.",
+  "$comment": "The thira-icons icon list, drawn in batches (1–4 = 0.1.0, 5 = 0.2.0). Names follow Lucide's canonical names where the concept is the same, so switching from Lucide is easy. `used` = projects that need it today. Status is computed: run `npm run progress`.",
   "batches": {
     "1": "Used in thira-ui / apps today, plus the core UI basics",
     "2": "Status, account, files, communication",
     "3": "Time, data, devices, commerce",
-    "4": "Everything else, and the extended Thai set"
+    "4": "Everything else, and the extended Thai set",
+    "5": "0.2.0: common gaps (editing, files and people modifiers, media and objects)"
   },
   "groups": [
     {
@@ -98,6 +99,22 @@
         {
           "name": "log-out",
           "batch": 2
+        },
+        {
+          "name": "arrow-up-down",
+          "batch": 5
+        },
+        {
+          "name": "corner-down-left",
+          "batch": 5
+        },
+        {
+          "name": "chevrons-left",
+          "batch": 5
+        },
+        {
+          "name": "chevrons-right",
+          "batch": 5
         }
       ]
     },
@@ -194,6 +211,30 @@
         {
           "name": "grip-vertical",
           "batch": 2
+        },
+        {
+          "name": "circle-plus",
+          "batch": 5
+        },
+        {
+          "name": "circle-minus",
+          "batch": 5
+        },
+        {
+          "name": "square-pen",
+          "batch": 5
+        },
+        {
+          "name": "clipboard",
+          "batch": 5
+        },
+        {
+          "name": "clipboard-check",
+          "batch": 5
+        },
+        {
+          "name": "list-filter",
+          "batch": 5
         }
       ]
     },
@@ -292,6 +333,14 @@
         {
           "name": "key-round",
           "batch": 2
+        },
+        {
+          "name": "user-check",
+          "batch": 5
+        },
+        {
+          "name": "user-minus",
+          "batch": 5
         }
       ]
     },
@@ -341,6 +390,26 @@
         {
           "name": "archive",
           "batch": 2
+        },
+        {
+          "name": "file-plus",
+          "batch": 5
+        },
+        {
+          "name": "file-check",
+          "batch": 5
+        },
+        {
+          "name": "folder-plus",
+          "batch": 5
+        },
+        {
+          "name": "image-plus",
+          "batch": 5
+        },
+        {
+          "name": "bookmark-check",
+          "batch": 5
         }
       ]
     },
@@ -378,6 +447,26 @@
         {
           "name": "send",
           "batch": 2
+        },
+        {
+          "name": "message-square",
+          "batch": 5
+        },
+        {
+          "name": "mail-open",
+          "batch": 5
+        },
+        {
+          "name": "bell-ring",
+          "batch": 5
+        },
+        {
+          "name": "map",
+          "batch": 5
+        },
+        {
+          "name": "compass",
+          "batch": 5
         }
       ]
     },
@@ -540,6 +629,30 @@
           "used": [
             "touch-type (TH/EN)"
           ]
+        },
+        {
+          "name": "camera",
+          "batch": 5
+        },
+        {
+          "name": "video",
+          "batch": 5
+        },
+        {
+          "name": "mic",
+          "batch": 5
+        },
+        {
+          "name": "mic-off",
+          "batch": 5
+        },
+        {
+          "name": "headphones",
+          "batch": 5
+        },
+        {
+          "name": "printer",
+          "batch": 5
         }
       ]
     },
@@ -646,6 +759,14 @@
         {
           "name": "wifi-off",
           "batch": 4
+        },
+        {
+          "name": "plane",
+          "batch": 5
+        },
+        {
+          "name": "car",
+          "batch": 5
         }
       ]
     },
