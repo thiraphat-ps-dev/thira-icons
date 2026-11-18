@@ -83,6 +83,45 @@ export function arcArrow(cx, cy, r, from, to, head = 3.5, reverse = false) {
   return [arc, `M${pt(arm(t))}L${pt(tip)}L${pt(arm(-t))}`];
 }
 
+/**
+ * Arc pieces of a circle, clockwise from `from` to `to` degrees (0 = up), keeping only the
+ * stretches where `keep(point)` is true — e.g. to cut an arc where a slash crosses it.
+ * Returns one SVG path string per kept piece.
+ */
+export function arcPieces(cx, cy, r, from, to, keep, step = 0.25) {
+  const pieces = [];
+  let start = null;
+  let prev = null;
+  for (let deg = from; deg <= to + 1e-9; deg += step) {
+    const ok = keep(onCircle(cx, cy, r, deg));
+    if (ok && start === null) start = deg;
+    if (!ok && start !== null) {
+      pieces.push([start, prev]);
+      start = null;
+    }
+    prev = deg;
+  }
+  if (start !== null) pieces.push([start, prev]);
+  const pt = ([x, y]) => `${f(x)} ${f(y)}`;
+  return pieces
+    .filter(([a, b]) => b - a > 1)
+    .map(([a, b]) => `M${pt(onCircle(cx, cy, r, a))}A${f(r)} ${f(r)} 0 ${b - a > 180 ? 1 : 0} 1 ${pt(onCircle(cx, cy, r, b))}`);
+}
+
+/** The two intersection points of two circles ([x, y] centres), or null if they don't meet. */
+export function circleIntersect(c1, r1, c2, r2) {
+  const d = Math.hypot(c2[0] - c1[0], c2[1] - c1[1]);
+  if (d > r1 + r2 || d < Math.abs(r1 - r2)) return null;
+  const a = (r1 * r1 - r2 * r2 + d * d) / (2 * d);
+  const h = Math.sqrt(r1 * r1 - a * a);
+  const m = [c1[0] + (a * (c2[0] - c1[0])) / d, c1[1] + (a * (c2[1] - c1[1])) / d];
+  const off = [(h * (c2[1] - c1[1])) / d, (-h * (c2[0] - c1[0])) / d];
+  return [
+    [m[0] + off[0], m[1] + off[1]],
+    [m[0] - off[0], m[1] - off[1]],
+  ];
+}
+
 function norm([x, y]) {
   const l = Math.hypot(x, y);
   return [x / l, y / l];

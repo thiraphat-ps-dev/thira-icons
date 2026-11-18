@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="git,branch,version control,fork,source,สาขา,เวอร์ชัน">
+  <circle cx="6" cy="18.5" r="2.5" data-duotone />
+  <circle cx="18" cy="6" r="2.5" data-duotone />
+  <path d="M6 3v13" />
+  <path d="M15.5 6A9.5 9.5 0 0 0 6 15.5" />
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="buddhist era,thai calendar,be,date,พ.ศ.,ปฏิทินไทย,พุทธศักราช,วันที่">
+  <rect x="3.5" y="5" width="17" height="15.5" rx="4" data-duotone />
+  <path d="M8 3v4" />
+  <path d="M16 3v4" />
+  <path d="M8 11.25a1.25 1.25 0 1 1 0 .01V17l4-4 4 4v-6" />
+</svg>

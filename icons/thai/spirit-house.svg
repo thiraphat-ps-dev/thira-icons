@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="spirit house,shrine,san phra phum,belief,offering,ศาลพระภูมิ,ศาล,ศาลเจ้า">
+  <path d="M12 2v2.5" />
+  <path d="M6 9.5 12 4.5l6 5" data-duotone />
+  <path d="M6 9.5 5 8" />
+  <path d="M18 9.5l1-1.5" />
+  <rect x="7.5" y="9.5" width="9" height="5.5" rx="1.5" data-duotone />
+  <path d="M10.5 15v-2a1.5 1.5 0 0 1 3 0v2" />
+  <path d="M12 15v5.5" />
+  <path d="M8 20.5h8" />
+</svg>

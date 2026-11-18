@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="wai,greeting,thanks,respect,pray,hello,ไหว้,สวัสดี,ขอบคุณ">
+  <path d="M12 3c-1.2 0-1.8 1-2 2.2L9 12" />
+  <path d="M12 3c1.2 0 1.8 1 2 2.2L15 12" />
+  <path d="M12 3v11" />
+  <path d="M9 12l-2-1.5a1.4 1.4 0 0 0-2 1.8l2.6 4.2L10 18.5" />
+  <path d="M15 12l2-1.5a1.4 1.4 0 0 1 2 1.8l-2.6 4.2L14 18.5" />
+  <path d="M10 18.5 8 21.5" />
+  <path d="M14 18.5l2 3" />
+  <path d="M10 18.5h4" />
+</svg>
