@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="account,profile,user,avatar,me,บัญชี,โปรไฟล์,ผู้ใช้">
+  <circle cx="12" cy="12" r="10" data-duotone />
+  <circle cx="12" cy="10" r="3.25" />
+  <path d="M6 20a7 7 0 0 1 12 0" />
+</svg>

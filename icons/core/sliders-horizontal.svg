@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="settings,adjust,controls,sliders,options,filter,ปรับ,ตั้งค่า,ตัวเลือก">
+  <path d="M4 6h9" />
+  <path d="M17 6h3" />
+  <circle cx="15" cy="6" r="2" data-duotone />
+  <path d="M4 12h2" />
+  <path d="M10 12h10" />
+  <circle cx="8" cy="12" r="2" data-duotone />
+  <path d="M4 18h8" />
+  <path d="M16 18h4" />
+  <circle cx="14" cy="18" r="2" data-duotone />
+</svg>

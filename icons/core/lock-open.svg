@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="unlock,open,unlocked,access,ปลดล็อก,เปิด">
+  <rect x="4" y="10.5" width="16" height="10.5" rx="3" data-duotone />
+  <path d="M7.5 10.5V7.5A4.5 4.5 0 0 1 15.9 5.25" />
+  <path d="M12 14.75v2" />
+</svg>
