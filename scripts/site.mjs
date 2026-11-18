@@ -57,7 +57,7 @@ const html = `<!doctype html>
   <section aria-labelledby="h-all"><h2 id="h-all">All icons</h2><ul class="grid" id="all"></ul></section>
 </main>
 <footer>
-  Click an icon to copy its React component name. Based on <a href="https://lucide.dev">Lucide</a> (ISC), restyled; Thai set by thira-icons.
+  Click an icon to copy its React component name. Drawn from scratch to the thira-icons <a href="https://github.com/thiraphat-ps-dev/thira-icons/blob/main/docs/design-spec.md">design spec</a>.
 </footer>
 <script type="module">
   const icons = await (await fetch('icons.json')).json();

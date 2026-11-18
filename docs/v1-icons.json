@@ -1,5 +1,5 @@
 {
-  "$comment": "The icons for thira-icons 0.1.0, drawn in batches. Names match Lucide's canonical names where the concept is the same, so each drawing replaces the Lucide fill-in. `used` = projects that need it today. Status is computed: run `npm run progress`.",
+  "$comment": "The icons for thira-icons 0.1.0, drawn in batches. Names follow Lucide's canonical names where the concept is the same, so switching from Lucide is easy. `used` = projects that need it today. Status is computed: run `npm run progress`.",
   "batches": {
     "1": "Used in thira-ui / apps today, plus the core UI basics",
     "2": "Status, account, files, communication",

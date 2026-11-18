@@ -10,7 +10,7 @@ import TrashDefault from '../dist/react/icons/trash.js';
 import { lint } from '../scripts/lint-icons.mjs';
 import { loadPlan } from '../scripts/progress.mjs';
 
-type Meta = { name: string; component: string; codepoint: string; tags: string[]; source: 'core' | 'thai' | 'lucide' };
+type Meta = { name: string; component: string; codepoint: string; tags: string[]; source: 'core' | 'thai' };
 const meta: Meta[] = JSON.parse(readFileSync('dist/icons.json', 'utf8'));
 
 describe('design spec (docs/design-spec.md)', () => {
@@ -21,22 +21,20 @@ describe('design spec (docs/design-spec.md)', () => {
 });
 
 describe('0.1.0 icon list (docs/v1-icons.json)', () => {
-  it('names only real icons: Lucide names (so drawings replace them) or new Thai ones', () => {
+  it('is fully drawn, and the package ships exactly that list', () => {
     const { rows } = loadPlan();
     const names = rows.map((r) => r.name);
     expect(new Set(names).size).toBe(names.length);
-    const unknown = rows.filter((r) => !r.thai && !r.inLucide && !r.drawn).map((r) => r.name);
-    expect(unknown).toEqual([]);
+    expect(rows.filter((r) => !r.drawn).map((r) => r.name)).toEqual([]);
+    expect(meta.map((m) => m.name).sort()).toEqual([...names].sort());
   });
 });
 
 describe('build output', () => {
-  it('uses the own drawing when a name exists in both core and Lucide', () => {
-    const search = meta.find((m) => m.name === 'search');
-    expect(search?.source).toBe('core');
-    const svg = readFileSync('dist/svg/search.svg', 'utf8');
-    expect(svg).toContain('r="6.5"'); // ours; Lucide's search circle is r="8"
-    expect(svg).not.toContain('data-'); // source-only attributes are stripped
+  it('strips source-only attributes from the outputs', () => {
+    expect(meta.find((m) => m.name === 'search')?.source).toBe('core');
+    expect(readFileSync('dist/svg/search.svg', 'utf8')).not.toContain('data-');
+    expect(readFileSync('dist/sprite.svg', 'utf8')).not.toContain('data-');
   });
 
   it('has one SVG file, one sprite symbol and one React export per icon', () => {
@@ -76,10 +74,8 @@ describe('build output', () => {
     expect(existsSync('dist/font/thira-icons.woff2')).toBe(true);
   });
 
-  it('applies the Thira style: stroke 1.75 and softer rect corners', () => {
-    const card = readFileSync('dist/svg/credit-card.svg', 'utf8');
-    expect(card).toContain('stroke-width="1.75"');
-    expect(card).toMatch(/<rect [^>]*rx="3"/); // Lucide draws it with rx="2"
+  it('uses the 1.75 stroke by default', () => {
+    expect(readFileSync('dist/svg/credit-card.svg', 'utf8')).toContain('stroke-width="1.75"');
   });
 });
 

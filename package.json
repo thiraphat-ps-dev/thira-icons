@@ -1,14 +1,13 @@
 {
   "name": "thira-icons",
   "version": "0.1.0",
-  "description": "Friendly, rounded stroke icons for React and plain HTML: a restyled fork of Lucide with a Thai set",
+  "description": "Friendly, rounded stroke icons for React and plain HTML: drawn from scratch, with a Thai set",
   "keywords": [
     "icons",
     "react",
     "svg",
     "sprite",
-    "thai",
-    "lucide"
+    "thai"
   ],
   "homepage": "https://thiraphat-ps-dev.github.io/thira-icons/",
   "bugs": "https://github.com/thiraphat-ps-dev/thira-icons/issues",
@@ -67,7 +66,6 @@
     "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
     "jsdom": "^31.0.1",
-    "lucide-static": "1.75.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "svg-path-bbox": "^2.1.0",

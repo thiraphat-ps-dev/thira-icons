@@ -3,7 +3,7 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
-/** Folders of hand-drawn icons, highest priority first. A name here replaces Lucide's. */
+/** Folders of hand-drawn icons, highest priority first. */
 export const SOURCE_DIRS = [
   { dir: 'icons/core', source: 'core' },
   { dir: 'icons/thai', source: 'thai' },
