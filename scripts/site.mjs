@@ -8,6 +8,7 @@ const { version } = JSON.parse(readFileSync('package.json', 'utf8'));
 // Overwrite in place (removing the folder fails on Windows while a dev server runs inside it).
 mkdirSync('site', { recursive: true });
 copyFileSync('dist/sprite.svg', 'site/sprite.svg');
+copyFileSync('site-assets/og.png', 'site/og.png');
 writeFileSync('site/icons.json', JSON.stringify(icons));
 
 const html = `<!doctype html>
@@ -17,6 +18,14 @@ const html = `<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>thira-icons</title>
 <meta name="description" content="${icons.length} friendly, rounded stroke icons for React and HTML, with a Thai set.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="thira-icons">
+<meta property="og:description" content="${icons.length} friendly, rounded stroke icons for React and HTML, with a Thai set.">
+<meta property="og:url" content="https://thiraphat-ps-dev.github.io/thira-icons/">
+<meta property="og:image" content="https://thiraphat-ps-dev.github.io/thira-icons/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <style>
   :root { color-scheme: light dark; --bg: #fcfcfe; --surface: #fff; --text: #1d2130; --muted: #5d6275; --border: #e3e5ee; --accent: #4f46e5; --soft: #eef0ff; }
   @media (prefers-color-scheme: dark) { :root { --bg: #14161d; --surface: #1b1e27; --text: #eef0f6; --muted: #a7acbd; --border: #2c303d; --accent: #a5b4fc; --soft: #272b45; } }
