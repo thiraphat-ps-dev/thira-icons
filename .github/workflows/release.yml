@@ -17,14 +17,14 @@ jobs:
     runs-on: ubuntu-latest
     environment: npm
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
           # No registry-url: it makes setup-node inject a placeholder NODE_AUTH_TOKEN,
           # which npm then sends instead of exchanging an OIDC trusted-publishing token.
           cache: npm
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
           cache: pip
