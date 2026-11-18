@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="settings,adjust,controls,sliders,equalizer,mixer,options,ปรับ,ตั้งค่า,ตัวเลือก">
+  <path d="M18 4v9" />
+  <path d="M18 17v3" />
+  <circle cx="18" cy="15" r="2" data-duotone />
+  <path d="M12 4v2" />
+  <path d="M12 10v10" />
+  <circle cx="12" cy="8" r="2" data-duotone />
+  <path d="M6 4v8" />
+  <path d="M6 16v4" />
+  <circle cx="6" cy="14" r="2" data-duotone />
+</svg>

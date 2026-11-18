@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="hotel,lodging,stay,accommodation,resort,bed,booking,โรงแรม,ที่พัก,รีสอร์ท,จองห้อง">
+  <rect x="5" y="2.5" width="14" height="19" rx="3" data-duotone />
+  <path d="M9.5 7v6" />
+  <path d="M14.5 7v6" />
+  <path d="M9.5 10h5" />
+  <path d="M9.5 21.5v-3a2.5 2.5 0 0 1 5 0v3" />
+</svg>

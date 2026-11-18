@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="chart,candlestick,stock chart,trading,ohlc,forex,กราฟแท่งเทียน,หุ้น,เทรด">
+  <rect x="3.5" y="9" width="3" height="7" rx="1" data-duotone />
+  <path d="M5 4.5V9" />
+  <path d="M5 16V19.5" />
+  <rect x="10.5" y="6.5" width="3" height="7" rx="1" data-duotone />
+  <path d="M12 3.5V6.5" />
+  <path d="M12 13.5V17" />
+  <rect x="17.5" y="8.5" width="3" height="7" rx="1" data-duotone />
+  <path d="M19 4.5V8.5" />
+  <path d="M19 15.5V19.5" />
+</svg>

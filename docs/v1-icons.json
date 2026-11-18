@@ -1,5 +1,5 @@
 {
-  "$comment": "The thira-icons icon list, drawn in batches (1–4 = 0.1.0, 5–12 = 0.2.0). Names follow Lucide's canonical names where the concept is the same, so switching from Lucide is easy. `used` = projects that need it today. Status is computed: run `npm run progress`.",
+  "$comment": "The thira-icons icon list, drawn in batches (1–4 = 0.1.0, 5–14 = 0.2.0). Names follow Lucide's canonical names where the concept is the same, so switching from Lucide is easy. `used` = projects that need it today. Status is computed: run `npm run progress`.",
   "batches": {
     "1": "Used in thira-ui / apps today, plus the core UI basics",
     "2": "Status, account, files, communication",
@@ -12,7 +12,9 @@
     "9": "0.2.0: home and everyday, nature and weather, money and business",
     "10": "0.2.0: more arrows, media playback, health and misc",
     "11": "0.2.0: basic shapes, security and time, more files and cloud",
-    "12": "0.2.0: food and drink, tools and creative, mail and messaging"
+    "12": "0.2.0: food and drink, tools and creative, mail and messaging",
+    "13": "0.2.0: charts and math, animals, buildings and road",
+    "14": "0.2.0: hardware, more layout, people and feelings"
   },
   "groups": [
     {
@@ -484,6 +486,42 @@
         {
           "name": "user-x",
           "batch": 6
+        },
+        {
+          "name": "meh",
+          "batch": 14
+        },
+        {
+          "name": "laugh",
+          "batch": 14
+        },
+        {
+          "name": "angry",
+          "batch": 14
+        },
+        {
+          "name": "party-popper",
+          "batch": 14
+        },
+        {
+          "name": "hand-heart",
+          "batch": 14
+        },
+        {
+          "name": "user-round",
+          "batch": 14
+        },
+        {
+          "name": "users-round",
+          "batch": 14
+        },
+        {
+          "name": "ghost",
+          "batch": 14
+        },
+        {
+          "name": "smile-plus",
+          "batch": 14
         }
       ]
     },
@@ -835,6 +873,46 @@
         {
           "name": "calendar-x",
           "batch": 6
+        },
+        {
+          "name": "chart-area",
+          "batch": 13
+        },
+        {
+          "name": "chart-scatter",
+          "batch": 13
+        },
+        {
+          "name": "chart-candlestick",
+          "batch": 13
+        },
+        {
+          "name": "chart-gantt",
+          "batch": 13
+        },
+        {
+          "name": "sigma",
+          "batch": 13
+        },
+        {
+          "name": "infinity",
+          "batch": 13
+        },
+        {
+          "name": "binary",
+          "batch": 13
+        },
+        {
+          "name": "divide",
+          "batch": 13
+        },
+        {
+          "name": "equal",
+          "batch": 13
+        },
+        {
+          "name": "pi",
+          "batch": 13
         }
       ]
     },
@@ -988,6 +1066,46 @@
         {
           "name": "radio",
           "batch": 10
+        },
+        {
+          "name": "laptop",
+          "batch": 14
+        },
+        {
+          "name": "tablet",
+          "batch": 14
+        },
+        {
+          "name": "tv",
+          "batch": 14
+        },
+        {
+          "name": "speaker",
+          "batch": 14
+        },
+        {
+          "name": "mouse",
+          "batch": 14
+        },
+        {
+          "name": "usb",
+          "batch": 14
+        },
+        {
+          "name": "bluetooth",
+          "batch": 14
+        },
+        {
+          "name": "battery-charging",
+          "batch": 14
+        },
+        {
+          "name": "webcam",
+          "batch": 14
+        },
+        {
+          "name": "router",
+          "batch": 14
         }
       ]
     },
@@ -1349,6 +1467,46 @@
         {
           "name": "minimize",
           "batch": 8
+        },
+        {
+          "name": "sliders-vertical",
+          "batch": 14
+        },
+        {
+          "name": "list-checks",
+          "batch": 14
+        },
+        {
+          "name": "layout-list",
+          "batch": 14
+        },
+        {
+          "name": "columns-2",
+          "batch": 14
+        },
+        {
+          "name": "rows-2",
+          "batch": 14
+        },
+        {
+          "name": "panel-top",
+          "batch": 14
+        },
+        {
+          "name": "panel-bottom",
+          "batch": 14
+        },
+        {
+          "name": "grip-horizontal",
+          "batch": 14
+        },
+        {
+          "name": "text-cursor",
+          "batch": 14
+        },
+        {
+          "name": "separator-horizontal",
+          "batch": 14
         }
       ]
     },
@@ -1664,6 +1822,96 @@
         {
           "name": "magnet",
           "batch": 12
+        }
+      ]
+    },
+    {
+      "title": "Animals",
+      "icons": [
+        {
+          "name": "cat",
+          "batch": 13
+        },
+        {
+          "name": "dog",
+          "batch": 13
+        },
+        {
+          "name": "bird",
+          "batch": 13
+        },
+        {
+          "name": "fish",
+          "batch": 13
+        },
+        {
+          "name": "rabbit",
+          "batch": 13
+        },
+        {
+          "name": "turtle",
+          "batch": 13
+        },
+        {
+          "name": "snail",
+          "batch": 13
+        },
+        {
+          "name": "feather",
+          "batch": 13
+        },
+        {
+          "name": "sprout",
+          "batch": 13
+        },
+        {
+          "name": "shell",
+          "batch": 13
+        }
+      ]
+    },
+    {
+      "title": "Buildings & road",
+      "icons": [
+        {
+          "name": "hospital",
+          "batch": 13
+        },
+        {
+          "name": "school",
+          "batch": 13
+        },
+        {
+          "name": "factory",
+          "batch": 13
+        },
+        {
+          "name": "warehouse",
+          "batch": 13
+        },
+        {
+          "name": "hotel",
+          "batch": 13
+        },
+        {
+          "name": "castle",
+          "batch": 13
+        },
+        {
+          "name": "tree-palm",
+          "batch": 13
+        },
+        {
+          "name": "signpost",
+          "batch": 13
+        },
+        {
+          "name": "traffic-cone",
+          "batch": 13
+        },
+        {
+          "name": "fuel",
+          "batch": 13
         }
       ]
     },

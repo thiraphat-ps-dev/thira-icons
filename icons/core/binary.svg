@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="binary,bits,zero one,digital,code,data,ไบนารี,เลขฐานสอง,บิต">
+  <path d="M6 5.5 8 3.5V10" />
+  <rect x="14" y="3.5" width="5" height="6.5" rx="1.5" data-duotone />
+  <rect x="5" y="14" width="5" height="6.5" rx="1.5" data-duotone />
+  <path d="M16 15.5 18 13.5V20" />
+</svg>

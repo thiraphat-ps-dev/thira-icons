@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="chart,scatter plot,scatter chart,dots,correlation,กราฟกระจาย,แผนภูมิ,จุดกระจาย">
+  <path d="M3.5 3.5v14a3 3 0 0 0 3 3h14" />
+  <circle cx="8" cy="15.5" r="1" />
+  <circle cx="11.5" cy="10" r="1" />
+  <circle cx="14.5" cy="15" r="1" />
+  <circle cx="17.5" cy="8.5" r="1" />
+  <circle cx="18.5" cy="16" r="1" />
+</svg>
