@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="receipt,bill,invoice,payment,order,ใบเสร็จ,บิล,ใบแจ้งหนี้">
+  <path d="M5 21V6a2.5 2.5 0 0 1 2.5-2.5h9A2.5 2.5 0 0 1 19 6v15l-2.33-1.5-2.34 1.5-2.33-1.5-2.33 1.5-2.34-1.5z" data-duotone />
+  <path d="M8.5 8h7" />
+  <path d="M8.5 12h7" />
+  <path d="M8.5 16h4" />
+</svg>

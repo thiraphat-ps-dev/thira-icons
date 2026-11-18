@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="gift,present,reward,promotion,bonus,ของขวัญ,รางวัล,โปรโมชัน">
+  <rect x="2.5" y="7" width="19" height="4" rx="1" />
+  <path d="M4 11v7a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-7" data-duotone />
+  <path d="M12 7v14" />
+  <path d="M12 7c-1-2.5-5-4-5.5-1.5S9.5 7 12 7" />
+  <path d="M12 7c1-2.5 5-4 5.5-1.5S14.5 7 12 7" />
+</svg>

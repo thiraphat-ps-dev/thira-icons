@@ -1,7 +1,9 @@
 // Batch 2 worksheet: status, account, files, communication. Writes icons/core/*.svg.
 //   node explore/batch-2.mjs
 import { writeFileSync } from 'node:fs';
-import { cubicPath, cubicTo, distToLine, f, findT, roundedPolygon, splitCubic } from '../scripts/geometry.mjs';
+import {
+  arcArrow, cubicPath, cubicTo, distToLine, f, findT, onCircle, roundedPolygon, splitCubic,
+} from '../scripts/geometry.mjs';
 
 const icons = {};
 const add = (name, tags, ...body) => (icons[name] = { tags, body });
@@ -11,34 +13,6 @@ const ellipse = (cx, cy, rx, ry) => `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" r
 const rect = (x, y, w, h, rx, duo = false) =>
   `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}"${duo ? ' data-duotone' : ''} />`;
 const pt = ([x, y]) => `${f(x)} ${f(y)}`;
-
-/** Point on a circle; angle in degrees, 0 = up, clockwise (screen). */
-const onCircle = (cx, cy, r, deg) => {
-  const a = (deg * Math.PI) / 180;
-  return [cx + r * Math.sin(a), cy - r * Math.cos(a)];
-};
-/**
- * Arc with an arrowhead at its end, clockwise from `from` to `to` degrees (to may exceed 360).
- * `head` is the arrowhead arm length; arms sit 40° either side of the backwards tangent.
- */
-function arcArrow(cx, cy, r, from, to, head = 3.5, reverse = false) {
-  const start = onCircle(cx, cy, r, from);
-  const end = onCircle(cx, cy, r, to);
-  const large = to - from > 180 ? 1 : 0;
-  const arc = `M${pt(start)}A${f(r)} ${f(r)} 0 ${large} 1 ${pt(end)}`;
-  // Tip at `end` (clockwise travel) or at `start` (reverse: the arrow points counter-clockwise).
-  const [tip, deg] = reverse ? [start, from] : [end, to];
-  const a = (deg * Math.PI) / 180;
-  const tangent = reverse ? [-Math.cos(a), -Math.sin(a)] : [Math.cos(a), Math.sin(a)]; // travel direction
-  const back = [-tangent[0], -tangent[1]];
-  const rot = (v, t) => [v[0] * Math.cos(t) - v[1] * Math.sin(t), v[0] * Math.sin(t) + v[1] * Math.cos(t)];
-  const arm = (t) => {
-    const v = rot(back, t);
-    return [tip[0] + v[0] * head, tip[1] + v[1] * head];
-  };
-  const t = (40 * Math.PI) / 180;
-  return [arc, `M${pt(arm(t))}L${pt(tip)}L${pt(arm(-t))}`];
-}
 
 // ── Arrows & navigation ──────────────────────────────────────────────────────────────────
 add('refresh-cw', 'refresh,reload,sync,update,repeat,รีเฟรช,โหลดใหม่,ซิงก์', ...arcArrow(12, 12, 8.5, 285, 420).map((d) => p(d)), ...arcArrow(12, 12, 8.5, 105, 240).map((d) => p(d)));

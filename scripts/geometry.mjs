@@ -37,6 +37,52 @@ export function roundedPolygon(points, radii) {
   return d + 'Z';
 }
 
+/**
+ * Midpoint of the arc that rounds corner `i` of a `roundedPolygon` with the same points/radii.
+ * Inner lines that meet a rounded corner should end here, not at the sharp vertex (which lies
+ * outside the drawn outline).
+ */
+export function cornerMid(points, i, r) {
+  const n = points.length;
+  const v = points[i];
+  const a = norm([points[(i - 1 + n) % n][0] - v[0], points[(i - 1 + n) % n][1] - v[1]]);
+  const b = norm([points[(i + 1) % n][0] - v[0], points[(i + 1) % n][1] - v[1]]);
+  const angle = Math.acos(Math.max(-1, Math.min(1, a[0] * b[0] + a[1] * b[1])));
+  const bis = norm([a[0] + b[0], a[1] + b[1]]);
+  const inset = r / Math.sin(angle / 2) - r;
+  return [v[0] + bis[0] * inset, v[1] + bis[1] * inset];
+}
+
+/** Point on a circle; angle in degrees, 0 = up, clockwise (screen). */
+export function onCircle(cx, cy, r, deg) {
+  const a = (deg * Math.PI) / 180;
+  return [cx + r * Math.sin(a), cy - r * Math.cos(a)];
+}
+
+/**
+ * Arc drawn clockwise from `from` to `to` degrees (0 = up; `to` may exceed 360), with an
+ * arrowhead at the end — or at the start pointing counter-clockwise when `reverse`.
+ * Arms are `head` long, 40° either side of the backwards tangent. Returns two path strings.
+ */
+export function arcArrow(cx, cy, r, from, to, head = 3.5, reverse = false) {
+  const start = onCircle(cx, cy, r, from);
+  const end = onCircle(cx, cy, r, to);
+  const large = to - from > 180 ? 1 : 0;
+  const pt = ([x, y]) => `${f(x)} ${f(y)}`;
+  const arc = `M${pt(start)}A${f(r)} ${f(r)} 0 ${large} 1 ${pt(end)}`;
+  const [tip, deg] = reverse ? [start, from] : [end, to];
+  const a = (deg * Math.PI) / 180;
+  const travel = reverse ? [-Math.cos(a), -Math.sin(a)] : [Math.cos(a), Math.sin(a)];
+  const back = [-travel[0], -travel[1]];
+  const rot = (v, t) => [v[0] * Math.cos(t) - v[1] * Math.sin(t), v[0] * Math.sin(t) + v[1] * Math.cos(t)];
+  const arm = (t) => {
+    const v = rot(back, t);
+    return [tip[0] + v[0] * head, tip[1] + v[1] * head];
+  };
+  const t = (40 * Math.PI) / 180;
+  return [arc, `M${pt(arm(t))}L${pt(tip)}L${pt(arm(-t))}`];
+}
+
 function norm([x, y]) {
   const l = Math.hypot(x, y);
   return [x / l, y / l];

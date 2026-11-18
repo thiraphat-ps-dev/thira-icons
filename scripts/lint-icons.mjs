@@ -102,9 +102,10 @@ export function lint(icons = loadSources()) {
     if (Number.isFinite(box[0])) {
       const r = (n) => Math.round(n * 100) / 100;
       const fmt = `${r(box[0])},${r(box[1])} → ${r(box[2])},${r(box[3])}`;
-      if (box[0] < BLEED[0] || box[1] < BLEED[0] || box[2] > BLEED[1] || box[3] > BLEED[1])
-        report('error', `geometry ${fmt} goes past the bleed limit ${BLEED.join('–')}`);
-      else if (box[0] < LIVE[0] || box[1] < LIVE[0] || box[2] > LIVE[1] || box[3] > LIVE[1])
+      const E = 0.01; // arc bounding boxes come back with float noise (22.0000001)
+      const outside = ([lo, hi]) => box[0] < lo - E || box[1] < lo - E || box[2] > hi + E || box[3] > hi + E;
+      if (outside(BLEED)) report('error', `geometry ${fmt} goes past the bleed limit ${BLEED.join('–')}`);
+      else if (outside(LIVE))
         report('warning', `geometry ${fmt} uses the bleed (live area is ${LIVE.join('–')})`);
     }
   }

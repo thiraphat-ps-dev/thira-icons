@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="server,host,hardware,rack,backend,เซิร์ฟเวอร์,โฮสต์">
+  <rect x="3" y="3" width="18" height="8" rx="2" data-duotone />
+  <rect x="3" y="13" width="18" height="8" rx="2" data-duotone />
+  <path d="M7 7h.01" />
+  <path d="M10.5 7h.01" />
+  <path d="M7 17h.01" />
+  <path d="M10.5 17h.01" />
+</svg>
