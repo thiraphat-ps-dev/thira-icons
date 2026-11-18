@@ -41,7 +41,7 @@ add('file-code', 'file,code,source,script,document,developer,ไฟล์,โค
 add('key', 'key,password,lock,access,unlock,secret,กุญแจ,รหัสผ่าน,ปลดล็อก,ความลับ',
   circle(12, 7, 4, true), p('M12 11v10.5'), p('M12 15.5h3.5'), p('M12 19.5h3.5'));
 
-add('fingerprint', 'fingerprint,biometric,touch id,identity,security,login,ลายนิ้วมือ,ไบโอเมตริก,ยืนยันตัวตน,ความปลอดภัย',
+add('fingerprint', 'fingerprint,biometric,identity,security,login,ลายนิ้วมือ,ไบโอเมตริก,ยืนยันตัวตน,ความปลอดภัย',
   // Redrawn by the reviewer: two clean symmetric arches read as a rainbow/magnet. A print is
   // asymmetric ridges with breaks: an outer ridge broken at the upper right, a middle ridge, and a
   // centre ridge that sweeps down — all on centre (12, 12), 4 units apart.

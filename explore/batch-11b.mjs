@@ -31,7 +31,7 @@ const SCAN = [
 ];
 add('scan', 'scan,scanner,frame,focus,capture,qr scanner,สแกน,โฟกัส,จับภาพ', ...SCAN);
 add('scan-line', 'scan line,barcode scan,scanning,laser,reading,สแกนบาร์โค้ด,เส้นสแกน,อ่านรหัส', ...SCAN, p('M7.5 12h9'));
-add('scan-face', 'scan face,face id,face recognition,biometric,facial scan,สแกนใบหน้า,จดจำใบหน้า,ไบโอเมตริก', ...SCAN,
+add('scan-face', 'scan face,face recognition,biometric,facial scan,สแกนใบหน้า,จดจำใบหน้า,ไบโอเมตริก', ...SCAN,
   p('M9.5 10h.01'), p('M14.5 10h.01'), p('M9.5 14a3.5 3.5 0 0 0 5 0'));
 
 // ── siren: dome on a base, rays above (sun's ray style).

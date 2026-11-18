@@ -76,7 +76,7 @@ add('git-branch', 'git,branch,version control,fork,source,สาขา,เวอ
 
 // ── Thai (extended) ──────────────────────────────────────────────────────────────────────
 // QR payment: three finder squares and a small ฿ where the fourth corner would be.
-addThai('qr-payment', 'qr,qr code,payment,scan to pay,promptpay,thai qr,สแกนจ่าย,คิวอาร์,พร้อมเพย์,ชำระเงิน',
+addThai('qr-payment', 'qr,qr code,payment,scan to pay,thai qr,สแกนจ่าย,คิวอาร์,ชำระเงิน',
   rect(3, 3, 7, 7, 2, true), rect(14, 3, 7, 7, 2, true), rect(3, 14, 7, 7, 2, true),
   p('M6.5 6.5h.01'), p('M17.5 6.5h.01'), p('M6.5 17.5h.01'),
   p('M15 14.5h2.5a1.5 1.5 0 0 1 0 3H15z'), p('M15 17.5h3a1.5 1.5 0 0 1 0 3H15z'), p('M16.75 13.5v8'));

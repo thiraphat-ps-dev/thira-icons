@@ -2,7 +2,7 @@
 
 Friendly, rounded stroke icons for React and plain HTML, with a **Thai set** (฿ baht, Thai ID card, temple, tuk-tuk, lotus…). Made to sit with [thira-ui](https://github.com/thiraphat-ps-dev/thira-ui) and [Thira Sans](https://github.com/thiraphat-ps-dev/thira-sans).
 
-140 icons — 128 everyday UI icons and 12 Thai ones — every one drawn from scratch to the same [design spec](docs/design-spec.md). The set is small on purpose and grows release by release; if you need an icon it doesn't have yet, [open an issue](https://github.com/thiraphat-ps-dev/thira-icons/issues).
+439 icons — 427 everyday icons and 12 Thai ones — every one drawn from scratch to the same [design spec](docs/design-spec.md): UI and arrows, files, communication, media and devices, text editing, charts, money, travel, food, nature and weather, animals, buildings, people and feelings. The set grows release by release; if you need an icon it doesn't have yet, [open an issue](https://github.com/thiraphat-ps-dev/thira-icons/issues).
 
 **Browse and search all icons (English or Thai):** https://thiraphat-ps-dev.github.io/thira-icons/
 
@@ -55,7 +55,7 @@ Exported as `thira-icons/svg/<name>.svg`, for Astro, Vue, Svelte, plain HTML or 
 </svg>
 ```
 
-Copy `thira-icons/sprite.svg` into your public folder. The stroke width is a CSS custom property, so it can change per use: `style="--thira-icon-stroke-width: 1.5"`. The full sprite is ~50 KB (~10 KB gzipped).
+Copy `thira-icons/sprite.svg` into your public folder. The stroke width is a CSS custom property, so it can change per use: `style="--thira-icon-stroke-width: 1.5"`. The full sprite is ~165 KB (~21 KB gzipped).
 
 ## Icon font
 
@@ -67,7 +67,7 @@ import 'thira-icons/font/thira-icons.css';
 <i class="ti ti-search" aria-hidden="true"></i>
 ```
 
-Classes are `ti ti-<name>`; glyphs are in the Private Use Area (codepoints in [icons/codepoints.json](icons/codepoints.json)). The font has a fixed 1.75 stroke and is ~11 KB as WOFF2. Prefer the other formats when you can: they need no font download, and the stroke can change.
+Classes are `ti ti-<name>`; glyphs are in the Private Use Area (codepoints in [icons/codepoints.json](icons/codepoints.json)). The font has a fixed 1.75 stroke and is ~30 KB as WOFF2. Prefer the other formats when you can: they need no font download, and the stroke can change.
 
 ## Thai set
 

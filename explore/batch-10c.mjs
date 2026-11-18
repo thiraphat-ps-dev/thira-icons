@@ -59,7 +59,9 @@ add('share', 'share,share sheet,send,export,forward,แชร์,ส่งต่
 add('unlink', 'unlink,broken link,disconnect,detach,remove link,ยกเลิกลิงก์,ลิงก์เสีย,ตัดการเชื่อมต่อ',
   p('M9 17H7A5 5 0 0 1 7 7h2'),
   p('M15 7h2a5 5 0 0 1 0 10h-2'),
-  p('M12 3.5v2'), p('M12 18.5v2'));
+  // Final review: stubs of link's centre bar on each side show the broken connection; the ticks
+  // alone read as a split pill.
+  p('M8 12h1.5'), p('M14.5 12H16'), p('M12 3.5v2'), p('M12 18.5v2'));
 
 // ── sun-moon: half sun (5 rays) top-left, moon.svg's crescent scaled into the bottom-right.
 const MOON = [[20, 14.5], [9.5, 4]];

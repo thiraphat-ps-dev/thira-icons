@@ -17,13 +17,13 @@ Icon library being **drawn from scratch** in the "Soft" style (chosen 2026-11-18
 | `npm run build`      | `icons/core` + `icons/thai` → `dist/` (svg, sprite, react, icons.json) and `tsc` |
 | `npm run build:font` | `dist/svg` → `dist/font` (Python: `pip install -r requirements.txt`, ~1–2 min)   |
 | `npm test`           | Typechecks tests against generated `.d.ts`, then Vitest on `dist/`              |
-| `npm run progress`   | Regenerates `docs/v1-icons.md` (0.1.0 list + drawn status) from `docs/v1-icons.json` |
+| `npm run progress`   | Regenerates `docs/v1-icons.md` (icon list + drawn status) from `docs/v1-icons.json` |
 | `npm run lint:icons` | Checks own icons against `docs/design-spec.md`                                  |
 | `npm run site`       | Preview site → `site/` (serve it, e.g. `python -m http.server` inside `site/`) |
 
 ## Decisions (keep unless the maintainer agrees to change them)
 
-1. **Only own drawings ship** (decided 2026-11-18; no Lucide fill-ins, no Lucide code or data). Names follow Lucide's where the idea is the same so switching is easy. Grow the set release by release; `docs/v1-icons.json` is the 0.1.0 list.
+1. **Only own drawings ship** (decided 2026-11-18; no Lucide fill-ins, no Lucide code or data). Names follow Lucide's where the idea is the same so switching is easy. Grow the set release by release; `docs/v1-icons.json` is the icon list (0.1.0 = batches 1–14); add new icons there as a new batch.
 2. Source-only attributes (`data-tags`, `data-duotone`) are stripped from outputs.
 3. **React names are `<Pascal>Icon`** (`SearchIcon`) so they never shadow `Map`, `Image`, `Link`. React 19+, `ref` as a prop, size defaults to `1em`, decorative (`aria-hidden`) unless `title`.
 4. **Icon font codepoints are permanent once published** (they were renumbered from e000 when Lucide was dropped, before any release). `icons/codepoints.json` is managed by the build and committed; removed icons keep their codepoint reserved. CI fails if the build changes it — run `npm run build` locally and commit the file after adding icons.

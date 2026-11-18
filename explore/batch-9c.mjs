@@ -16,11 +16,12 @@ add('banknote', 'banknote,cash,money,bill,note,payment,ธนบัตร,เง
 
 // coins: front coin + back coin, the back one cut where it would meet the front.
 {
-  const front = [8.5, 15.5], back = [15, 9], r = 5.5;
-  const keep = ([x, y]) => Math.hypot(x - front[0], y - front[1]) >= r + 3.75;
+  const front = [8.5, 15.5], back = [15, 9], r = 6;
+  const keep = ([x, y]) => Math.hypot(x - front[0], y - front[1]) >= r + 2.75; // final review: same 2.75 cut as the slash rule, so more of the back coin shows
   add('coins', 'coins,money,cash,change,currency,savings,เหรียญ,เงิน,เงินทอน,เงินออม',
-    circle(front[0], front[1], r, true), ...arcPieces(back[0], back[1], r, 0, 360, keep).map((d) => p(d)),
-    p('M8.5 13.5v4'));
+    circle(front[0], front[1], r, true), p('M7.25 13.5 9 12.5v6'), // a small "1": a coin's face value
+    ...arcPieces(back[0], back[1], r, 0, 360, keep).map((d) => p(d)));
+  // (the front coin's vertical mark was dropped in the final review: ring + bar read as a power button)
 }
 
 add('piggy-bank', 'piggy bank,savings,save,money,pig,deposit,กระปุกออมสิน,หมู,เงินออม,ออม',

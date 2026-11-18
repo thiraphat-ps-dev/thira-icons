@@ -1,20 +1,20 @@
 {
-  "$comment": "The thira-icons icon list, drawn in batches (1–4 = 0.1.0, 5–14 = 0.2.0). Names follow Lucide's canonical names where the concept is the same, so switching from Lucide is easy. `used` = projects that need it today. Status is computed: run `npm run progress`.",
+  "$comment": "The thira-icons icon list, drawn in batches 1–14 and released together as 0.1.0. New batches add to it. Names follow Lucide's canonical names where the concept is the same, so switching from Lucide is easy. `used` = projects that need it today. Status is computed: run `npm run progress`.",
   "batches": {
     "1": "Used in thira-ui / apps today, plus the core UI basics",
     "2": "Status, account, files, communication",
     "3": "Time, data, devices, commerce",
     "4": "Everything else, and the extended Thai set",
-    "5": "0.2.0: common gaps (editing, files and people modifiers, media and objects)",
-    "6": "0.2.0: more actions, modifiers, weather and everyday objects",
-    "7": "0.2.0: text editing, travel and outdoors, more misc",
-    "8": "0.2.0: layout and controls, communication and reactions, developer and system",
-    "9": "0.2.0: home and everyday, nature and weather, money and business",
-    "10": "0.2.0: more arrows, media playback, health and misc",
-    "11": "0.2.0: basic shapes, security and time, more files and cloud",
-    "12": "0.2.0: food and drink, tools and creative, mail and messaging",
-    "13": "0.2.0: charts and math, animals, buildings and road",
-    "14": "0.2.0: hardware, more layout, people and feelings"
+    "5": "common gaps (editing, files and people modifiers, media and objects)",
+    "6": "more actions, modifiers, weather and everyday objects",
+    "7": "text editing, travel and outdoors, more misc",
+    "8": "layout and controls, communication and reactions, developer and system",
+    "9": "home and everyday, nature and weather, money and business",
+    "10": "more arrows, media playback, health and misc",
+    "11": "basic shapes, security and time, more files and cloud",
+    "12": "food and drink, tools and creative, mail and messaging",
+    "13": "charts and math, animals, buildings and road",
+    "14": "hardware, more layout, people and feelings"
   },
   "groups": [
     {

@@ -16,7 +16,7 @@ add('laptop', 'laptop,notebook,computer,portable,แล็ปท็อป,โน
   p('M4.5 15.5V7a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v8.5', true),
   p(roundedPolygon([[4.5, 15.5], [19.5, 15.5], [21.5, 20], [2.5, 20]], 1)));
 
-add('tablet', 'tablet,ipad,device,touch,screen,แท็บเล็ต,ไอแพด,อุปกรณ์,หน้าจอสัมผัส',
+add('tablet', 'tablet,device,touch,screen,แท็บเล็ต,อุปกรณ์,หน้าจอสัมผัส',
   rect(4, 2.5, 16, 19, 4, true), p('M12 18h.01'));
 
 add('tv', 'tv,television,screen,broadcast,antenna,ทีวี,โทรทัศน์,จอ,เสาอากาศ',

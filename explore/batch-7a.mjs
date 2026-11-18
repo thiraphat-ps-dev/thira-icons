@@ -32,8 +32,10 @@ add('list-ordered', 'ordered list,numbered list,numbers,steps,sequence,ราย
   p('M11 6h9'), p('M11 12h9'), p('M11 18h9'));
 
 add('quote', 'quote,blockquote,citation,quotation,testimonial,อ้างอิง,คำพูด,การอ้างอิง',
-  p('M9 6.5C5.75 7 4 8.75 4 12v4a1.5 1.5 0 0 0 1.5 1.5H8A1.5 1.5 0 0 0 9.5 16v-4H4', true),
-  p('M19.5 6.5C16.25 7 14.5 8.75 14.5 12v4a1.5 1.5 0 0 0 1.5 1.5h2.5a1.5 1.5 0 0 0 1.5-1.5v-4h-5.5', true));
+  // Final review: the tall marks read as the digits "66". Squat rounded blocks with a short tail
+  // hooking up from the top-left read as quotation marks.
+  p('M4 11.5a2 2 0 0 1 2-2h2.5a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM4 11.5c0-2.5 1.5-4.5 4-5.5', true),
+  p('M13.5 11.5a2 2 0 0 1 2-2H18a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-2.5a2 2 0 0 1-2-2zM13.5 11.5c0-2.5 1.5-4.5 4-5.5', true));
 
 add('type', 'type,text,font,typography,letter,heading,ตัวอักษร,ข้อความ,ฟอนต์',
   p('M4.5 8V6.5A1.5 1.5 0 0 1 6 5h12a1.5 1.5 0 0 1 1.5 1.5V8'), p('M12 5v15'), p('M9 20h6'));
