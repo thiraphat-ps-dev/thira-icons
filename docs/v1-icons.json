@@ -1,12 +1,13 @@
 {
-  "$comment": "The thira-icons icon list, drawn in batches (1–4 = 0.1.0, 5–6 = 0.2.0). Names follow Lucide's canonical names where the concept is the same, so switching from Lucide is easy. `used` = projects that need it today. Status is computed: run `npm run progress`.",
+  "$comment": "The thira-icons icon list, drawn in batches (1–4 = 0.1.0, 5–7 = 0.2.0). Names follow Lucide's canonical names where the concept is the same, so switching from Lucide is easy. `used` = projects that need it today. Status is computed: run `npm run progress`.",
   "batches": {
     "1": "Used in thira-ui / apps today, plus the core UI basics",
     "2": "Status, account, files, communication",
     "3": "Time, data, devices, commerce",
     "4": "Everything else, and the extended Thai set",
     "5": "0.2.0: common gaps (editing, files and people modifiers, media and objects)",
-    "6": "0.2.0: more actions, modifiers, weather and everyday objects"
+    "6": "0.2.0: more actions, modifiers, weather and everyday objects",
+    "7": "0.2.0: text editing, travel and outdoors, more misc"
   },
   "groups": [
     {
@@ -888,6 +889,136 @@
         {
           "name": "coffee",
           "batch": 6
+        },
+        {
+          "name": "bug",
+          "batch": 7
+        },
+        {
+          "name": "rocket",
+          "batch": 7
+        },
+        {
+          "name": "puzzle",
+          "batch": 7
+        },
+        {
+          "name": "hash",
+          "batch": 7
+        },
+        {
+          "name": "percent",
+          "batch": 7
+        },
+        {
+          "name": "calculator",
+          "batch": 7
+        },
+        {
+          "name": "target",
+          "batch": 7
+        },
+        {
+          "name": "award",
+          "batch": 7
+        },
+        {
+          "name": "crown",
+          "batch": 7
+        },
+        {
+          "name": "battery",
+          "batch": 7
+        }
+      ]
+    },
+    {
+      "title": "Text editing",
+      "icons": [
+        {
+          "name": "bold",
+          "batch": 7
+        },
+        {
+          "name": "italic",
+          "batch": 7
+        },
+        {
+          "name": "underline",
+          "batch": 7
+        },
+        {
+          "name": "strikethrough",
+          "batch": 7
+        },
+        {
+          "name": "text-align-start",
+          "batch": 7
+        },
+        {
+          "name": "text-align-center",
+          "batch": 7
+        },
+        {
+          "name": "text-align-end",
+          "batch": 7
+        },
+        {
+          "name": "list-ordered",
+          "batch": 7
+        },
+        {
+          "name": "quote",
+          "batch": 7
+        },
+        {
+          "name": "type",
+          "batch": 7
+        }
+      ]
+    },
+    {
+      "title": "Travel & outdoors",
+      "icons": [
+        {
+          "name": "navigation",
+          "batch": 7
+        },
+        {
+          "name": "route",
+          "batch": 7
+        },
+        {
+          "name": "bus",
+          "batch": 7
+        },
+        {
+          "name": "train-front",
+          "batch": 7
+        },
+        {
+          "name": "bike",
+          "batch": 7
+        },
+        {
+          "name": "luggage",
+          "batch": 7
+        },
+        {
+          "name": "ticket",
+          "batch": 7
+        },
+        {
+          "name": "mountain",
+          "batch": 7
+        },
+        {
+          "name": "tent",
+          "batch": 7
+        },
+        {
+          "name": "anchor",
+          "batch": 7
         }
       ]
     },

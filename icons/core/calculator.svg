@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="calculator,calculate,math,accounting,numbers,เครื่องคิดเลข,คำนวณ,บัญชี,ตัวเลข">
+  <rect x="4.5" y="2.5" width="15" height="19" rx="4" data-duotone />
+  <path d="M8.5 8h7" />
+  <path d="M8.5 13h.01" />
+  <path d="M12 13h.01" />
+  <path d="M15.5 13h.01" />
+  <path d="M8.5 17h.01" />
+  <path d="M12 17h.01" />
+  <path d="M15.5 17h.01" />
+</svg>

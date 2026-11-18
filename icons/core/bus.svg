@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="bus,coach,transport,public transport,vehicle,รถบัส,รถเมล์,ขนส่งสาธารณะ,รถโดยสาร">
+  <rect x="3" y="3.5" width="18" height="15" rx="4" data-duotone />
+  <path d="M3 10.5h18" />
+  <path d="M7.5 14.5h.01" />
+  <path d="M16.5 14.5h.01" />
+  <path d="M7 18.5v3" />
+  <path d="M17 18.5v3" />
+</svg>

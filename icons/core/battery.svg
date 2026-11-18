@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="battery,power,charge,energy,level,แบตเตอรี่,พลังงาน,ชาร์จ,ไฟฟ้า">
+  <rect x="2.5" y="6.5" width="16" height="11" rx="3" data-duotone />
+  <path d="M18.5 10h1.5a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-1.5" />
+  <path d="M6.25 10v4" />
+  <path d="M10 10v4" />
+  <path d="M13.75 10v4" />
+</svg>
