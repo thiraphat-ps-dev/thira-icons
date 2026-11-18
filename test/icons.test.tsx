@@ -8,6 +8,7 @@ import { BahtIcon, SearchIcon, TempleIcon } from '../dist/react/index.js';
 import TrashDefault from '../dist/react/icons/trash.js';
 
 import { lint } from '../scripts/lint-icons.mjs';
+import { loadPlan } from '../scripts/progress.mjs';
 
 type Meta = { name: string; component: string; codepoint: string; tags: string[]; source: 'core' | 'thai' | 'lucide' };
 const meta: Meta[] = JSON.parse(readFileSync('dist/icons.json', 'utf8'));
@@ -16,6 +17,16 @@ describe('design spec (docs/design-spec.md)', () => {
   it('has no lint errors in icons/core and icons/thai', () => {
     const errors = lint().filter((p) => p.level === 'error');
     expect(errors.map((e) => `${e.file}  ${e.message}`)).toEqual([]);
+  });
+});
+
+describe('0.1.0 icon list (docs/v1-icons.json)', () => {
+  it('names only real icons: Lucide names (so drawings replace them) or new Thai ones', () => {
+    const { rows } = loadPlan();
+    const names = rows.map((r) => r.name);
+    expect(new Set(names).size).toBe(names.length);
+    const unknown = rows.filter((r) => !r.thai && !r.inLucide && !r.drawn).map((r) => r.name);
+    expect(unknown).toEqual([]);
   });
 });
 

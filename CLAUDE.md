@@ -17,6 +17,8 @@ Icon library being **drawn from scratch** in the "Soft" style (chosen 2026-11-18
 | `npm run build`      | Lucide + `icons/thai` → `dist/` (svg, sprite, react, icons.json) and `tsc`      |
 | `npm run build:font` | `dist/svg` → `dist/font` (Python: `pip install -r requirements.txt`, ~1–2 min)   |
 | `npm test`           | Typechecks tests against generated `.d.ts`, then Vitest on `dist/`              |
+| `npm run progress`   | Regenerates `docs/v1-icons.md` (0.1.0 list + drawn status) from `docs/v1-icons.json` |
+| `npm run lint:icons` | Checks own icons against `docs/design-spec.md`                                  |
 | `npm run site`       | Preview site → `site/` (serve it, e.g. `python -m http.server` inside `site/`) |
 
 ## Decisions (keep unless the maintainer agrees to change them)

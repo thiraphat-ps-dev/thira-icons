@@ -1,0 +1,206 @@
+{
+  "$comment": "The icons for thira-icons 0.1.0, drawn in batches. Names match Lucide's canonical names where the concept is the same, so each drawing replaces the Lucide fill-in. `used` = projects that need it today. Status is computed: run `npm run progress`.",
+  "batches": {
+    "1": "Used in thira-ui / apps today, plus the core UI basics",
+    "2": "Status, account, files, communication",
+    "3": "Time, data, devices, commerce",
+    "4": "Everything else, and the extended Thai set"
+  },
+  "groups": [
+    {
+      "title": "Arrows & navigation",
+      "icons": [
+        { "name": "chevron-down", "batch": 1, "used": ["thira-ui Accordion/Select", "pulseboard"] },
+        { "name": "chevron-up", "batch": 1 },
+        { "name": "chevron-left", "batch": 1 },
+        { "name": "chevron-right", "batch": 1 },
+        { "name": "chevrons-up-down", "batch": 1, "used": ["thira-ui Select"] },
+        { "name": "arrow-up-right", "batch": 1, "used": ["portfolio", "pulseboard"] },
+        { "name": "arrow-right", "batch": 1, "used": ["portfolio", "thira-ui Kbd"] },
+        { "name": "arrow-left", "batch": 1, "used": ["pulseboard"] },
+        { "name": "arrow-down", "batch": 1, "used": ["portfolio"] },
+        { "name": "arrow-up", "batch": 1 },
+        { "name": "external-link", "batch": 1 },
+        { "name": "refresh-cw", "batch": 2 },
+        { "name": "rotate-ccw", "batch": 2 },
+        { "name": "undo-2", "batch": 2 },
+        { "name": "redo-2", "batch": 2 },
+        { "name": "log-in", "batch": 2 },
+        { "name": "log-out", "batch": 2 }
+      ]
+    },
+    {
+      "title": "Actions",
+      "icons": [
+        { "name": "check", "batch": 1, "used": ["thira-ui Checkbox/Menu/Select", "touch-type", "pulseboard"] },
+        { "name": "x", "batch": 1, "used": ["thira-ui Dialog/Toast", "pulseboard"] },
+        { "name": "minus", "batch": 1, "used": ["thira-ui Checkbox"] },
+        { "name": "plus", "batch": 1 },
+        { "name": "search", "batch": 1 },
+        { "name": "ellipsis", "batch": 1, "used": ["thira-ui Menu"] },
+        { "name": "ellipsis-vertical", "batch": 1 },
+        { "name": "menu", "batch": 1 },
+        { "name": "pencil", "batch": 1 },
+        { "name": "copy", "batch": 1 },
+        { "name": "trash", "batch": 1 },
+        { "name": "funnel", "batch": 2 },
+        { "name": "sliders-horizontal", "batch": 2 },
+        { "name": "download", "batch": 2 },
+        { "name": "upload", "batch": 2 },
+        { "name": "share-2", "batch": 2 },
+        { "name": "link", "batch": 2 },
+        { "name": "save", "batch": 2 },
+        { "name": "grip-vertical", "batch": 2 }
+      ]
+    },
+    {
+      "title": "Status & feedback",
+      "icons": [
+        { "name": "circle-check", "batch": 1, "used": ["pulseboard (up)"] },
+        { "name": "circle-x", "batch": 1, "used": ["pulseboard (down)"] },
+        { "name": "info", "batch": 1, "used": ["thira-ui Toast"] },
+        { "name": "triangle-exclamation-point", "batch": 1, "used": ["thira-ui Toast"] },
+        { "name": "circle-exclamation-point", "batch": 1 },
+        { "name": "loader-circle", "batch": 1 },
+        { "name": "circle-question-mark", "batch": 2 },
+        { "name": "bell", "batch": 2 },
+        { "name": "bell-off", "batch": 2 },
+        { "name": "ban", "batch": 2 },
+        { "name": "lock", "batch": 2 },
+        { "name": "lock-open", "batch": 2 },
+        { "name": "shield-check", "batch": 2 }
+      ]
+    },
+    {
+      "title": "People & account",
+      "icons": [
+        { "name": "user", "batch": 1 },
+        { "name": "settings", "batch": 1 },
+        { "name": "users", "batch": 2 },
+        { "name": "user-plus", "batch": 2 },
+        { "name": "circle-user", "batch": 2 },
+        { "name": "key-round", "batch": 2 }
+      ]
+    },
+    {
+      "title": "Files & content",
+      "icons": [
+        { "name": "file", "batch": 2 },
+        { "name": "file-text", "batch": 2 },
+        { "name": "folder", "batch": 2 },
+        { "name": "folder-open", "batch": 2 },
+        { "name": "image", "batch": 2 },
+        { "name": "paperclip", "batch": 2 },
+        { "name": "book-open", "batch": 2 },
+        { "name": "bookmark", "batch": 2 },
+        { "name": "tag", "batch": 2 },
+        { "name": "inbox", "batch": 2 },
+        { "name": "archive", "batch": 2 }
+      ]
+    },
+    {
+      "title": "Communication & places",
+      "icons": [
+        { "name": "house", "batch": 1 },
+        { "name": "mail", "batch": 2 },
+        { "name": "message-circle", "batch": 2 },
+        { "name": "phone", "batch": 2 },
+        { "name": "at-sign", "batch": 2 },
+        { "name": "globe", "batch": 2 },
+        { "name": "map-pin", "batch": 2 },
+        { "name": "send", "batch": 2 }
+      ]
+    },
+    {
+      "title": "Time & data",
+      "icons": [
+        { "name": "calendar", "batch": 1 },
+        { "name": "clock", "batch": 3 },
+        { "name": "calendar-check", "batch": 3 },
+        { "name": "rotate-ccw-clock", "batch": 3 },
+        { "name": "timer", "batch": 3, "used": ["touch-type"] },
+        { "name": "chart-line", "batch": 3, "used": ["pulseboard"] },
+        { "name": "chart-bar", "batch": 3 },
+        { "name": "chart-pie", "batch": 3 },
+        { "name": "activity", "batch": 3, "used": ["pulseboard"] },
+        { "name": "trending-up", "batch": 3 },
+        { "name": "trending-down", "batch": 3 },
+        { "name": "gauge", "batch": 3, "used": ["touch-type"] },
+        { "name": "database", "batch": 3 },
+        { "name": "server", "batch": 3 }
+      ]
+    },
+    {
+      "title": "Devices & media",
+      "icons": [
+        { "name": "sun", "batch": 1, "used": ["touch-type", "pulseboard"] },
+        { "name": "moon", "batch": 1, "used": ["touch-type", "pulseboard"] },
+        { "name": "eye", "batch": 1 },
+        { "name": "eye-off", "batch": 1 },
+        { "name": "delete", "batch": 3, "used": ["touch-type (backspace)"] },
+        { "name": "keyboard", "batch": 3, "used": ["touch-type"] },
+        { "name": "command", "batch": 3, "used": ["thira-ui Kbd"] },
+        { "name": "monitor", "batch": 3 },
+        { "name": "smartphone", "batch": 3 },
+        { "name": "maximize-2", "batch": 3 },
+        { "name": "minimize-2", "batch": 3 },
+        { "name": "play", "batch": 3 },
+        { "name": "pause", "batch": 3 },
+        { "name": "volume-2", "batch": 3 },
+        { "name": "volume-x", "batch": 3 },
+        { "name": "languages", "batch": 3, "used": ["touch-type (TH/EN)"] }
+      ]
+    },
+    {
+      "title": "Commerce",
+      "icons": [
+        { "name": "shopping-cart", "batch": 3 },
+        { "name": "shopping-bag", "batch": 3 },
+        { "name": "credit-card", "batch": 3 },
+        { "name": "wallet", "batch": 3 },
+        { "name": "receipt", "batch": 3 },
+        { "name": "gift", "batch": 3 },
+        { "name": "store", "batch": 3 },
+        { "name": "package", "batch": 3 }
+      ]
+    },
+    {
+      "title": "Misc",
+      "icons": [
+        { "name": "star", "batch": 4 },
+        { "name": "heart", "batch": 4 },
+        { "name": "thumbs-up", "batch": 4 },
+        { "name": "sparkles", "batch": 4 },
+        { "name": "zap", "batch": 4 },
+        { "name": "lightbulb", "batch": 4 },
+        { "name": "flag", "batch": 4 },
+        { "name": "layout-dashboard", "batch": 4 },
+        { "name": "list", "batch": 4 },
+        { "name": "layout-grid", "batch": 4 },
+        { "name": "code", "batch": 4 },
+        { "name": "terminal", "batch": 4 },
+        { "name": "git-branch", "batch": 4 },
+        { "name": "cloud", "batch": 4 },
+        { "name": "wifi-off", "batch": 4 }
+      ]
+    },
+    {
+      "title": "Thai",
+      "thai": true,
+      "icons": [
+        { "name": "baht", "batch": 1 },
+        { "name": "baht-circle", "batch": 1 },
+        { "name": "thai-id-card", "batch": 1 },
+        { "name": "temple", "batch": 1 },
+        { "name": "tuk-tuk", "batch": 1 },
+        { "name": "lotus", "batch": 1 },
+        { "name": "qr-payment", "batch": 4, "note": "generic QR + ฿, not the PromptPay mark" },
+        { "name": "calendar-thai", "batch": 4, "note": "Buddhist Era (พ.ศ.) calendar" },
+        { "name": "wai", "batch": 4, "note": "hands pressed together (greeting, thanks)" },
+        { "name": "elephant", "batch": 4 },
+        { "name": "spirit-house", "batch": 4, "note": "ศาลพระภูมิ" },
+        { "name": "sticky-rice", "batch": 4, "note": "กระติบข้าวเหนียว" }
+      ]
+    }
+  ]
+}

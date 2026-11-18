@@ -50,7 +50,8 @@
     "site": "node scripts/site.mjs",
     "test": "tsc -p tsconfig.test.json && vitest run",
     "check": "npm run build && npm test",
-    "lint:icons": "node scripts/lint-icons.mjs"
+    "lint:icons": "node scripts/lint-icons.mjs",
+    "progress": "node scripts/progress.mjs"
   },
   "peerDependencies": {
     "react": ">=19"
