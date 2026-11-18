@@ -1,0 +1,2 @@
+picosvg==0.23.0
+fonttools[woff]
