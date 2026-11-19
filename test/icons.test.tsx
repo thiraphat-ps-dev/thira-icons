@@ -4,14 +4,30 @@ import { createRef } from 'react';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import * as Icons from '../dist/react/index.js';
-import { BahtIcon, SearchIcon, TempleIcon } from '../dist/react/index.js';
+import {
+  BahtIcon,
+  CircleAlertIcon,
+  CircleExclamationPointIcon,
+  SearchIcon,
+  TempleIcon,
+} from '../dist/react/index.js';
 import TrashDefault from '../dist/react/icons/trash.js';
 
 import { lint } from '../scripts/lint-icons.mjs';
 import { loadPlan } from '../scripts/progress.mjs';
 
-type Meta = { name: string; component: string; codepoint: string; tags: string[]; source: 'core' | 'thai' };
+type Meta = {
+  name: string;
+  component: string;
+  codepoint: string;
+  tags: string[];
+  source: 'core' | 'thai';
+  aliases?: string[];
+};
 const meta: Meta[] = JSON.parse(readFileSync('dist/icons.json', 'utf8'));
+/** Deprecated old name → current name (icons/aliases.json). */
+const aliases: Record<string, string> = JSON.parse(readFileSync('icons/aliases.json', 'utf8'));
+const aliasCount = Object.keys(aliases).length;
 
 describe('design spec (docs/design-spec.md)', () => {
   it('has no lint errors in icons/core and icons/thai', () => {
@@ -37,11 +53,11 @@ describe('build output', () => {
     expect(readFileSync('dist/sprite.svg', 'utf8')).not.toContain('data-');
   });
 
-  it('has one SVG file, one sprite symbol and one React export per icon', () => {
+  it('has one SVG file, one sprite symbol and one React export per icon (and per alias)', () => {
     const svgs = readdirSync('dist/svg');
     const sprite = readFileSync('dist/sprite.svg', 'utf8');
-    expect(svgs).toHaveLength(meta.length);
-    expect(sprite.match(/<symbol /g)).toHaveLength(meta.length);
+    expect(svgs).toHaveLength(meta.length + aliasCount);
+    expect(sprite.match(/<symbol /g)).toHaveLength(meta.length + aliasCount);
     for (const { name, component } of meta) {
       expect(svgs).toContain(`${name}.svg`);
       expect(sprite).toContain(`<symbol id="${name}"`);
@@ -70,8 +86,34 @@ describe('build output', () => {
   // The font needs Python (scripts/font.py); CI always builds it, locally it's optional.
   it.skipIf(!existsSync('dist/font/thira-icons.css'))('has an icon font class per icon', () => {
     const css = readFileSync('dist/font/thira-icons.css', 'utf8');
-    expect(css.match(/^\.ti-[a-z0-9-]+::before/gm)).toHaveLength(meta.length);
+    expect(css.match(/^\.ti-[a-z0-9-]+::before/gm)).toHaveLength(meta.length + aliasCount);
+    for (const [alias, target] of Object.entries(aliases)) {
+      const cp = meta.find((m) => m.name === target)!.codepoint;
+      expect(css).toContain(`.ti-${alias}::before { content: "\\${cp}"`);
+    }
     expect(existsSync('dist/font/thira-icons.woff2')).toBe(true);
+  });
+
+  it('keeps renamed icons working under their old names, on the same codepoint', () => {
+    expect(aliases).toEqual({
+      'circle-exclamation-point': 'circle-alert',
+      'triangle-exclamation-point': 'triangle-alert',
+    });
+    const saved: Record<string, string> = JSON.parse(readFileSync('icons/codepoints.json', 'utf8'));
+    const sprite = readFileSync('dist/sprite.svg', 'utf8');
+    const names = new Set(meta.map((m) => m.name));
+    const shapes = (svg: string) => svg.replace(/^<svg[^>]*>/, '');
+    for (const [alias, target] of Object.entries(aliases)) {
+      expect(names.has(alias)).toBe(false);
+      expect(meta.find((m) => m.name === target)?.aliases).toContain(alias);
+      expect(saved[alias]).toBeDefined();
+      expect(saved[target]).toBe(saved[alias]);
+      expect(shapes(readFileSync(`dist/svg/${alias}.svg`, 'utf8'))).toBe(
+        shapes(readFileSync(`dist/svg/${target}.svg`, 'utf8')),
+      );
+      expect(sprite).toContain(`<symbol id="${alias}"`);
+      expect(readFileSync(`dist/react/icons/${alias}.d.ts`, 'utf8')).toContain('@deprecated');
+    }
   });
 
   it('uses the 1.75 stroke by default', () => {
@@ -134,6 +176,19 @@ describe('React icons', () => {
     expect(svg).toHaveAttribute('stroke-width', '2');
     expect(svg).toHaveClass('thira-icon', 'thira-icon-temple', 'extra');
     expect(svg).toHaveAttribute('color', 'red');
+  });
+
+  it('render the same drawing under a deprecated alias', () => {
+    const { container } = render(
+      <>
+        <CircleAlertIcon />
+        <CircleExclamationPointIcon />
+      </>,
+    );
+    const [current, old] = container.querySelectorAll('svg');
+    expect(old.innerHTML).toBe(current.innerHTML);
+    expect(old).toHaveClass('thira-icon-circle-exclamation-point');
+    expect(CircleExclamationPointIcon.displayName).toBe('CircleExclamationPointIcon');
   });
 
   it('are also default exports of per-icon modules', () => {

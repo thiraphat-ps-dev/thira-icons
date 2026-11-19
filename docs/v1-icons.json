@@ -356,15 +356,17 @@
           ]
         },
         {
-          "name": "triangle-exclamation-point",
+          "name": "triangle-alert",
           "batch": 1,
+          "note": "Renamed from `triangle-exclamation-point` in 0.2.0 (old name kept as a deprecated alias)",
           "used": [
             "thira-ui Toast"
           ]
         },
         {
-          "name": "circle-exclamation-point",
-          "batch": 1
+          "name": "circle-alert",
+          "batch": 1,
+          "note": "Renamed from `circle-exclamation-point` in 0.2.0 (old name kept as a deprecated alias)"
         },
         {
           "name": "loader-circle",

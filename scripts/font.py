@@ -71,7 +71,9 @@ def main() -> None:
     fb.font.flavor = "woff2"
     fb.save(str(OUT / f"{FAMILY}.woff2"))
 
-    rules = "\n".join(f'.ti-{i["name"]}::before {{ content: "\\{i["codepoint"]}"; content: "\\{i["codepoint"]}" / ""; }}' for i in icons)
+    # Deprecated old names (icons.json "aliases") get a class on the same codepoint.
+    classes = [(name, i["codepoint"]) for i in icons for name in [i["name"], *i.get("aliases", [])]]
+    rules = "\n".join(f'.ti-{name}::before {{ content: "\\{cp}"; content: "\\{cp}" / ""; }}' for name, cp in classes)
     (OUT / f"{FAMILY}.css").write_text(
         f"""/* thira-icons icon font. Prefer the React components, SVG files or sprite: they scale the
  * stroke and need no font download. Mark icons decorative with aria-hidden, or give the

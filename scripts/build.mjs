@@ -1,6 +1,8 @@
 // Builds every output from icons/core/*.svg and icons/thai/*.svg, drawn to docs/design-spec.md.
 // Outputs in dist/:
 //   svg/<name>.svg, sprite.svg, icons.json, react/icons/<name>.js(+.d.ts), react/index.js(+.d.ts)
+// Renamed icons keep their old name as a deprecated alias (icons/aliases.json: old → new) in
+// every output, so a rename never breaks an app.
 // The React runtime (src/create-icon.ts) is compiled separately by `tsc` into dist/react/.
 import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -49,7 +51,8 @@ function componentName(name) {
  */
 const CODEPOINTS = 'icons/codepoints.json';
 const FIRST_CODEPOINT = 0xe000;
-function assignCodepoints(icons) {
+/** @param {Record<string, string>} aliases old name → new name */
+function assignCodepoints(icons, aliases) {
   /** @type {Record<string, number>} */
   let map = {};
   try {
@@ -57,6 +60,10 @@ function assignCodepoints(icons) {
     map = Object.fromEntries(Object.entries(saved).map(([k, hex]) => [k, parseInt(hex, 16)]));
   } catch {
     /* first build */
+  }
+  // A renamed icon keeps the glyph's codepoint; the old name stays in the file, on the same one.
+  for (const [alias, target] of Object.entries(aliases)) {
+    if (map[alias] !== undefined) map[target] ??= map[alias];
   }
   let next = Math.max(FIRST_CODEPOINT - 1, ...Object.values(map)) + 1;
   for (const icon of icons) {
@@ -70,14 +77,31 @@ function assignCodepoints(icons) {
   writeFileSync(CODEPOINTS, JSON.stringify(Object.fromEntries(sorted), null, 2) + '\n');
 }
 
-function check(icons) {
+/** Deprecated old names: icons/aliases.json maps old name → current name. */
+const ALIASES = 'icons/aliases.json';
+/** @returns {Record<string, string>} */
+function loadAliases() {
+  try {
+    return JSON.parse(readFileSync(ALIASES, 'utf8'));
+  } catch (e) {
+    if (e.code === 'ENOENT') return {};
+    throw e;
+  }
+}
+
+function check(icons, aliases) {
   const seen = new Map();
-  for (const icon of icons) {
-    if (!/^[a-z][a-z0-9-]*$/.test(icon.name)) throw new Error(`Bad icon name: ${icon.name}`);
-    for (const key of [icon.name, icon.component]) {
-      if (seen.has(key)) throw new Error(`"${icon.name}" clashes with "${seen.get(key)}" (${key})`);
-      seen.set(key, icon.name);
+  const names = [...icons.map((i) => i.name), ...Object.keys(aliases)];
+  for (const name of names) {
+    if (!/^[a-z][a-z0-9-]*$/.test(name)) throw new Error(`Bad icon name: ${name}`);
+    for (const key of [name, componentName(name)]) {
+      if (seen.has(key)) throw new Error(`"${name}" clashes with "${seen.get(key)}" (${key})`);
+      seen.set(key, name);
     }
+  }
+  const byName = new Set(icons.map((i) => i.name));
+  for (const [alias, target] of Object.entries(aliases)) {
+    if (!byName.has(target)) throw new Error(`${ALIASES}: "${alias}" points to unknown icon "${target}"`);
   }
 }
 
@@ -95,13 +119,25 @@ function main() {
   const icons = loadOwn()
     .map((icon) => ({ ...icon, component: componentName(icon.name) }))
     .sort((a, b) => a.name.localeCompare(b.name));
-  check(icons);
-  assignCodepoints(icons);
+  const aliases = loadAliases();
+  check(icons, aliases);
+  assignCodepoints(icons, aliases);
+  /** Deprecated old names as icon-like entries that reuse their target's drawing. */
+  const aliasIcons = Object.entries(aliases)
+    .map(([name, to]) => {
+      const target = icons.find((i) => i.name === to);
+      return { ...target, name, component: componentName(name), aliasOf: target };
+    })
+    .sort((a, b) => a.name.localeCompare(b.name));
+  for (const icon of icons) icon.aliases = aliasIcons.filter((a) => a.aliasOf === icon).map((a) => a.name);
 
   rmSync(DIST, { recursive: true, force: true });
   for (const dir of ['svg', 'react/icons']) mkdirSync(join(DIST, dir), { recursive: true });
 
-  for (const icon of icons) {
+  for (const icon of [...icons, ...aliasIcons]) {
+    const deprecated = icon.aliasOf
+      ? `/** @deprecated Renamed to \`${icon.aliasOf.component}\` (\`${icon.aliasOf.name}\`). */\n`
+      : '';
     // Raw SVG
     writeFileSync(
       join(DIST, 'svg', `${icon.name}.svg`),
@@ -112,17 +148,19 @@ function main() {
     writeFileSync(
       join(DIST, 'react/icons', `${icon.name}.js`),
       `import { createIcon } from '../create-icon.js';\n\n` +
+        deprecated +
         `export const ${icon.component} = /* @__PURE__ */ createIcon(${JSON.stringify(icon.component)}, ${node}, ${JSON.stringify(icon.name)});\n` +
         `export default ${icon.component};\n`,
     );
     writeFileSync(
       join(DIST, 'react/icons', `${icon.name}.d.ts`),
       `import type { ThiraIcon } from '../create-icon.js';\n\n` +
+        deprecated +
         `export declare const ${icon.component}: ThiraIcon;\nexport default ${icon.component};\n`,
     );
   }
 
-  const reexports = icons.map((i) => `export { ${i.component} } from './icons/${i.name}.js';`).join('\n');
+  const reexports = [...icons, ...aliasIcons].map((i) => `export { ${i.component} } from './icons/${i.name}.js';`).join('\n');
   writeFileSync(
     join(DIST, 'react/index.js'),
     `export { createIcon } from './create-icon.js';\n${reexports}\n`,
@@ -135,7 +173,7 @@ function main() {
   // Sprite: stroke width comes from a custom property so <use> instances can change it,
   // e.g. <svg style="--thira-icon-stroke-width: 1.5">. Presentation attributes on the symbol
   // would win over anything inherited from the page.
-  const symbols = icons
+  const symbols = [...icons, ...aliasIcons]
     .map(
       (i) =>
         `  <symbol id="${i.name}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" style="stroke-width: var(--thira-icon-stroke-width, ${STROKE_WIDTH})">\n${elements(i.node, '    ')}\n  </symbol>`,
@@ -146,12 +184,13 @@ function main() {
   writeFileSync(
     join(DIST, 'icons.json'),
     JSON.stringify(
-      icons.map(({ name, component, tags, source, codepoint }) => ({
+      icons.map(({ name, component, tags, source, codepoint, aliases: old }) => ({
         name,
         component,
         codepoint: codepoint.toString(16),
         tags,
         source,
+        ...(old.length ? { aliases: old } : {}),
       })),
       null,
       0,
@@ -159,7 +198,10 @@ function main() {
   );
 
   const count = (s) => icons.filter((i) => i.source === s).length;
-  console.log(`built ${icons.length} icons: ${count('core')} core + ${count('thai')} Thai`);
+  console.log(
+    `built ${icons.length} icons: ${count('core')} core + ${count('thai')} Thai` +
+      (aliasIcons.length ? `, plus ${aliasIcons.length} deprecated aliases` : ''),
+  );
 }
 
 main();

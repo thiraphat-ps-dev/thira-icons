@@ -10,7 +10,7 @@ Friendly, rounded stroke icons for React and plain HTML, with a **Thai set** (à¸
 - **Soft style:** 1.75 round strokes, generous corners and full, friendly proportions on a 24Ã—24 grid.
 - **Familiar names:** general icons use the same names as [Lucide](https://lucide.dev) where the idea is the same (`search`, `trash`, `circle-check`), so switching is mostly a find-and-replace.
 - **Accessible by default:** decorative (`aria-hidden`) unless you give a `title`, `aria-label` or `aria-labelledby`.
-- **Stable names and codepoints:** icon font codepoints never change or get reused between versions.
+- **Stable names and codepoints:** icon font codepoints never change or get reused between versions, and a renamed icon keeps working under its old name (marked deprecated) in every format.
 
 ```sh
 npm install thira-icons
