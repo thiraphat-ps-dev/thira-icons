@@ -1,7 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="list tree,tree view,hierarchy,outline,nested,structure,โครงสร้าง,ลำดับชั้น,แผนผัง">
-  <path d="M8.5 6H20" />
-  <path d="M4.5 6v10a2 2 0 0 0 2 2H9" />
-  <path d="M4.5 10a2 2 0 0 0 2 2H9" />
-  <path d="M12.5 12H20" />
-  <path d="M12.5 18H20" />
+  <circle cx="5" cy="5" r="1.75" data-duotone />
+  <path d="M10 5h10" />
+  <path d="M5 6.75V17a2 2 0 0 0 2 2h2.25" />
+  <path d="M5 10a2 2 0 0 0 2 2h2.25" />
+  <circle cx="11" cy="12" r="1.75" />
+  <circle cx="11" cy="19" r="1.75" />
+  <path d="M15.75 12H20" />
+  <path d="M15.75 19H20" />
 </svg>
