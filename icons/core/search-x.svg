@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="search x,clear search,no results,not found,cancel search,ล้างการค้นหา,ไม่พบ,ไม่มีผลลัพธ์">
+  <circle cx="10.5" cy="10.5" r="6.5" data-duotone />
+  <path d="m15.5 15.5 4.5 4.5" />
+  <path d="m8.5 8.5 4 4" />
+  <path d="m12.5 8.5-4 4" />
+</svg>

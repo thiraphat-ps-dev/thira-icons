@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+### Added
+
+- Batch 15: 14 new icons for sorting, filters and search states, sidebars and date pickers (453 icons in total). Font codepoints `e1b7`–`e1c4`.
+  - Sorting: `arrow-down-narrow-wide`, `arrow-down-wide-narrow`, `arrow-up-narrow-wide`, `arrow-up-wide-narrow`
+  - Actions: `copy-check`, `funnel-x`, `search-x`, `pin`
+  - Files and dates: `file-search`, `calendar-range`, `calendar-clock`
+  - Layout: `list-tree`, `panel-left-close`, `panel-left-open`
+
 ## 0.2.0 — 2026-11-19
 
 ### Fixed

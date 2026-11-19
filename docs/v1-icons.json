@@ -14,7 +14,8 @@
     "11": "basic shapes, security and time, more files and cloud",
     "12": "food and drink, tools and creative, mail and messaging",
     "13": "charts and math, animals, buildings and road",
-    "14": "hardware, more layout, people and feelings"
+    "14": "hardware, more layout, people and feelings",
+    "15": "sorting, filters and search states, sidebars, date pickers"
   },
   "groups": [
     {
@@ -188,6 +189,22 @@
         {
           "name": "redo",
           "batch": 10
+        },
+        {
+          "name": "arrow-down-narrow-wide",
+          "batch": 15
+        },
+        {
+          "name": "arrow-down-wide-narrow",
+          "batch": 15
+        },
+        {
+          "name": "arrow-up-narrow-wide",
+          "batch": 15
+        },
+        {
+          "name": "arrow-up-wide-narrow",
+          "batch": 15
         }
       ]
     },
@@ -328,6 +345,22 @@
         {
           "name": "cloud-upload",
           "batch": 6
+        },
+        {
+          "name": "copy-check",
+          "batch": 15
+        },
+        {
+          "name": "funnel-x",
+          "batch": 15
+        },
+        {
+          "name": "search-x",
+          "batch": 15
+        },
+        {
+          "name": "pin",
+          "batch": 15
         }
       ]
     },
@@ -649,6 +682,10 @@
         {
           "name": "hard-drive-download",
           "batch": 11
+        },
+        {
+          "name": "file-search",
+          "batch": 15
         }
       ]
     },
@@ -915,6 +952,14 @@
         {
           "name": "pi",
           "batch": 13
+        },
+        {
+          "name": "calendar-range",
+          "batch": 15
+        },
+        {
+          "name": "calendar-clock",
+          "batch": 15
         }
       ]
     },
@@ -1509,6 +1554,18 @@
         {
           "name": "separator-horizontal",
           "batch": 14
+        },
+        {
+          "name": "list-tree",
+          "batch": 15
+        },
+        {
+          "name": "panel-left-close",
+          "batch": 15
+        },
+        {
+          "name": "panel-left-open",
+          "batch": 15
         }
       ]
     },

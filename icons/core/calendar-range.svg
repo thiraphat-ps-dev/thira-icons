@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="calendar range,date range,period,from to,booking dates,ช่วงวันที่,ระยะเวลา,ปฏิทิน">
+  <rect x="3.5" y="5" width="17" height="15.5" rx="4" data-duotone />
+  <path d="M8 3v4" />
+  <path d="M16 3v4" />
+  <path d="M3.5 10.5h17" />
+  <path d="M8 13.75h.01" />
+  <path d="M12 13.75h4" />
+  <path d="M8 17.5h4" />
+  <path d="M16 17.5h.01" />
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-tags="calendar clock,schedule,date and time,reminder,appointment time,นัดหมาย,วันและเวลา,ตั้งเวลา">
+  <path d="M20.5 11.5V9a4 4 0 0 0-4-4h-9a4 4 0 0 0-4 4v7.5a4 4 0 0 0 4 4h4" data-duotone />
+  <path d="M8 3v4" />
+  <path d="M16 3v4" />
+  <path d="M3.5 10.5h17" />
+  <circle cx="18" cy="18" r="3.75" />
+  <path d="M18 16.25V18l1.25 .75" />
+</svg>

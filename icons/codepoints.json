@@ -439,5 +439,19 @@
   "user-round": "e1b3",
   "users-round": "e1b4",
   "warehouse": "e1b5",
-  "webcam": "e1b6"
+  "webcam": "e1b6",
+  "arrow-down-narrow-wide": "e1b7",
+  "arrow-down-wide-narrow": "e1b8",
+  "arrow-up-narrow-wide": "e1b9",
+  "arrow-up-wide-narrow": "e1ba",
+  "calendar-clock": "e1bb",
+  "calendar-range": "e1bc",
+  "copy-check": "e1bd",
+  "file-search": "e1be",
+  "funnel-x": "e1bf",
+  "list-tree": "e1c0",
+  "panel-left-close": "e1c1",
+  "panel-left-open": "e1c2",
+  "pin": "e1c3",
+  "search-x": "e1c4"
 }
