@@ -9,8 +9,9 @@ export interface IconProps extends Omit<SVGProps<SVGSVGElement>, 'children'> {
   /** Stroke width in grid units (the grid is 24). Defaults to 1.75. */
   strokeWidth?: number | string;
   /**
-   * Accessible name. Without it the icon is decorative (`aria-hidden`) — the right choice when
-   * text next to it already says the same thing, e.g. a button with a label.
+   * Accessible name. Without it (or `aria-label` / `aria-labelledby`) the icon is decorative
+   * (`aria-hidden`) — the right choice when text next to it already says the same thing, e.g. a
+   * button with a label.
    */
   title?: string;
 }
@@ -23,8 +24,10 @@ const DEFAULT_STROKE = 1.75;
 export function createIcon(displayName: string, node: IconNode, name: string): ThiraIcon {
   function Icon({ size = '1em', strokeWidth = DEFAULT_STROKE, title, className, ...props }: IconProps) {
     const titleId = useId();
-    const a11y = title
-      ? { role: 'img', 'aria-labelledby': titleId }
+    // Exposed as an image when it has an accessible name from any source; decorative otherwise.
+    const labelled = Boolean(title || props['aria-label'] || props['aria-labelledby']);
+    const a11y = labelled
+      ? { role: 'img', ...(title ? { 'aria-labelledby': titleId } : {}) }
       : { 'aria-hidden': true as const, focusable: 'false' as const };
     return createElement(
       'svg',

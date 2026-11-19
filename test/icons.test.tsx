@@ -92,7 +92,37 @@ describe('React icons', () => {
 
   it('become a named image with `title`', () => {
     render(<BahtIcon title="Price in baht" />);
-    expect(screen.getByRole('img', { name: 'Price in baht' })).toBeInTheDocument();
+    const svg = screen.getByRole('img', { name: 'Price in baht' });
+    expect(svg).not.toHaveAttribute('aria-hidden');
+  });
+
+  it('become a named image with `aria-label` (icon-only buttons)', () => {
+    render(
+      <button type="button">
+        <SearchIcon aria-label="Search" />
+      </button>,
+    );
+    const svg = screen.getByRole('img', { name: 'Search' });
+    expect(svg).not.toHaveAttribute('aria-hidden');
+    expect(svg).not.toHaveAttribute('aria-labelledby');
+    expect(screen.getByRole('button', { name: 'Search' })).toBeInTheDocument();
+  });
+
+  it('become a named image with `aria-labelledby`', () => {
+    render(
+      <>
+        <span id="lbl">Temple</span>
+        <TempleIcon aria-labelledby="lbl" />
+      </>,
+    );
+    const svg = screen.getByRole('img', { name: 'Temple' });
+    expect(svg).toHaveAttribute('aria-labelledby', 'lbl');
+    expect(svg).not.toHaveAttribute('aria-hidden');
+  });
+
+  it('stay decorative with an empty `aria-label`', () => {
+    const { container } = render(<SearchIcon aria-label="" />);
+    expect(container.querySelector('svg')).toHaveAttribute('aria-hidden', 'true');
   });
 
   it('take size, strokeWidth, className, other SVG props and a ref', () => {

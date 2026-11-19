@@ -9,7 +9,7 @@ Friendly, rounded stroke icons for React and plain HTML, with a **Thai set** (�
 - **Four ways to use them:** React components, SVG files, an SVG sprite, and an icon font.
 - **Soft style:** 1.75 round strokes, generous corners and full, friendly proportions on a 24×24 grid.
 - **Familiar names:** general icons use the same names as [Lucide](https://lucide.dev) where the idea is the same (`search`, `trash`, `circle-check`), so switching is mostly a find-and-replace.
-- **Accessible by default:** decorative (`aria-hidden`) unless you give a `title`.
+- **Accessible by default:** decorative (`aria-hidden`) unless you give a `title`, `aria-label` or `aria-labelledby`.
 - **Stable names and codepoints:** icon font codepoints never change or get reused between versions.
 
 ```sh
@@ -34,7 +34,7 @@ Every icon is `<Name>Icon` in PascalCase: `arrow-up-right` → `ArrowUpRightIcon
 | ------------- | -------- | ----------------------------------------------------------------------------------- |
 | `size`        | `'1em'`  | Width and height. `1em` follows the surrounding font size.                          |
 | `strokeWidth` | `1.75`   | In grid units (the grid is 24).                                                     |
-| `title`       | —        | Accessible name. Without it the icon is `aria-hidden`, which is right next to text. |
+| `title`       | —        | Accessible name. Without it (or `aria-label` / `aria-labelledby`) the icon is `aria-hidden`, which is right next to text. |
 | any SVG prop  |          | `className`, `style`, `color`, `ref`, `onClick`…                                    |
 
 Colour is `currentColor`, so icons take the text colour. Each module is separate and the package has `"sideEffects": false`, so bundlers only ship the icons you import. You can also import one icon directly: `import TempleIcon from 'thira-icons/react/temple'`. Needs React 19 (`ref` is a regular prop).
